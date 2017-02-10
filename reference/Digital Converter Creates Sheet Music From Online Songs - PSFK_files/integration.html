@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://membership.psfk.com//integration?v1.1 -->
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <script id="IntegrationJs" type="text/javascript">
+
+
+function getCookie(b){var d=" "+document.cookie;var c=" "+b+"=";var e=null;var f=0;var a=0;if(d.length>0){f=d.indexOf(c);if(f!=-1){f+=c.length;a=d.indexOf(";",f);if(a==-1){a=d.length}e=decodeURIComponent(d.substring(f,a))}}return(e)}function deleteCookie(a){document.cookie=a+"=; path=/; domain="+document.location.hostname+";expires=Thu, 01-Jan-70 00:00:01 GMT";document.cookie=a+"=; path=/;expires=Thu, 01-Jan-70 00:00:01 GMT"}function isIe(){var b=window.navigator.userAgent;var a=b.indexOf("MSIE ");if(a>0||!!navigator.userAgent.match(/Trident.*rv\:11\./)){return true}else{return false}}function integration(){var a=null;var b=1;if(isIe()){console.log("is IE... ");return}a=getCookie("pw_token");if(!a){a=localStorage.getItem("pw_token")}if(!(pw_status%40)){var c=new XMLHttpRequest();c.open("GET","/integration/checkAuth?token="+a,true);c.send();c.onreadystatechange=function(){if(c.status==200&&c.responseText){try{var d=JSON.parse(c.responseText);if(d.status=="ok"){a=d.token;if(a!=null&&a!=""&&a!=undefined){if(pw_status<=10||prev_pwt!=a){prev_pwt=a;top.postMessage({type:"pw_public_token",value:a},"*");top.postMessage({type:"IntegrationJs",value:1},"*")}}else{if(pw_status<=10||prev_pwt!=a){prev_pwt=null;top.postMessage({type:"pw_public_logout",value:1},"*");deleteCookie("pw_token");localStorage.clear()}}if(prev_pwt!=a){pw_status=0}}}catch(f){console.log(f)}}};pw_status++}else{if(a!=null&&a!=""&&a!=undefined){if(pw_status<=10||prev_pwt!=a){prev_pwt=a;top.postMessage({type:"pw_public_token",value:a},"*");top.postMessage({type:"IntegrationJs",value:1},"*")}}else{if(pw_status<=10||prev_pwt!=a){prev_pwt=null;top.postMessage({type:"pw_public_logout",value:1},"*");deleteCookie("pw_token");localStorage.clear()}}pw_status++}}(function(){pw_status=0;prev_pwt=null;setTimeout(function(){top.postMessage({type:"IntegrationJs",value:1},"*")},800);setInterval("integration()",1200)}());
+
+    </script>
+</head>
+<body>
+
+
+</body></html>

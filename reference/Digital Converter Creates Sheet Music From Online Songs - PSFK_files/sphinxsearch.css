@@ -1,0 +1,132 @@
+/*!* */
+    /*Document   : sphinxsearch*/
+    /*Created on : Mar 3, 2011, 9:14:06 AM*/
+    /*Author     : Ivinco*/
+    /*Description:*/
+        /*Custom stylesheet for the sphinx search forms.*/
+/**!*/
+
+/*!* */
+   /*TODO customize this sample style*/
+   /*Syntax recommendation http://www.w3.org/TR/REC-CSS2/*/
+/**!*/
+
+/*!**/
+/*Styles for search form on the sidebar*/
+/**!*/
+/*#searchbar ul li,*/
+/*#searchbar ul li:hover{*/
+    /*background-image: none;*/
+/*}*/
+
+/*#searchbar #searchform {*/
+    /*width: 100%;*/
+/*}*/
+/*#searchbar #sphinx_sinput {*/
+    /*width: 170px;*/
+/*}*/
+/*#searchbar #submit {*/
+    /*float: right;*/
+    /*padding: 3px 2px 4px 4px;*/
+/*}*/
+
+/*!**/
+/*Styles for search form on the top of search page*/
+/**!*/
+
+/*#searchpanel ul li,*/
+/*#searchpanel ul li:hover{*/
+    /*background-image: none;*/
+/*}*/
+
+/*ul.page-numbers li*/
+/*{*/
+/*display: inline;*/
+/*list-style-type: none;*/
+/*padding-right: 5px;*/
+/*}*/
+
+#s {
+    padding: 10px 6px;
+    margin-right: 10px;
+    font-size: 12px;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+
+    transition: ease-in-out 0.3s;
+    -moz-transition: ease-in-out 0.3s;
+    -webkit-transition: ease-in-out 0.3s;
+}
+
+#s:hover {
+    border-bottom: 1px solid rgba(102,51,153,1);
+}
+
+#s:focus {
+    background: #fafafa;
+    box-shadow: none;
+    outline: none;
+    border-bottom: 1px solid rgba(102,51,153,1);
+}
+
+#submit {
+    padding: 8px 20px;
+    background: transparent;
+    font-size: 12px;
+    border: 2px solid rgba(72, 72, 72, 0.8);
+
+    transition: ease-in-out 0.3s;
+    -moz-transition: ease-in-out 0.3s;
+    -webkit-transition: ease-in-out 0.3s;
+}
+
+#submit:hover {
+    border: 2px solid rgba(72, 72, 72, 1);
+}
+
+#searchform > div:nth-child(6) {
+    margin-top: 15px;
+}
+
+#searchform > div:nth-child(6) > a:nth-child(2) {
+    margin-left: 10px;
+}
+
+#searchform_advanced {
+    margin-top: 6px;
+}
+
+#searchform_advanced > input {
+    margin-right: 4px;
+    margin-top: 5px;
+}
+
+#search_pan_pages {
+    margin-bottom: 12px;
+    width: 15px;
+    height: 15px;
+}
+
+#search_pan_posts {
+    width: 15px;
+    height: 15px;
+}
+
+#search_sortby_date_relevance {
+    width: 15px;
+    height: 15px;
+}
+
+#search_pan_sortby_rel {
+    width: 15px;
+    height: 15px;
+}
+
+#search_pan_sortby_date {
+    width: 15px;
+    height: 15px;
+}
+#searchpanel {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}

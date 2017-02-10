@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://www.lunaverus.com/cnn -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <style type="text/css">
+      html, body { 
+          margin: 0px;
+          min-height: 100%;
+          padding: 0px;
+      }
+      body { 
+          background: -webkit-linear-gradient(#D7D7D7, #FFFFFF); /* For Safari 5.1 to 6.0 */
+                             background: -o-linear-gradient(#D7D7D7, #FFFFFF); /* For Opera 11.1 to 12.0 */
+                             background: -moz-linear-gradient(#D7D7D7, #FFFFFF); /* For Firefox 3.6 to 15 */
+                             background: linear-gradient(#D7D7D7, #FFFFFF); /* Standard syntax (must be last) */;
+          font-family: "Helvetica Neue",HelveticaNeue,Helvetica,Arial,sans-serif;
+      }
+      section { 
+          padding: 2%;
+          max-width: 1100;
+          margin-left: auto;
+          margin-top: 2em;
+          margin-bottom: 1em;
+          min-height: 100vh;
+          background-color: #FDFDFD;
+          width: 80%;
+          font-size: 20px;
+          display: block;
+          border-style: none;
+          margin-right: auto;
+      }
+      .bullets { 
+          min-width: 200px;
+          max-width: 900px;
+          line-height: 150%;
+          width: 60%;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      h1, h2, h3, h4, h5, h6 { 
+          text-align: center;
+          width: 85%;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      p { 
+          font-size: 1.0em;
+          min-width: 200px;
+          font-color: #202020;
+          display: block;
+          width: 85%;
+          margin-left: auto;
+          line-height: 150%;
+          vertical-align: top;
+          box-sizing: border-box;
+          margin-right: auto;
+      }
+      .navItem { color: #202020;}
+      .featureList { 
+          width: 70%;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      ol { 
+          width: 70%;
+          font-size: 1.25em;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      ol ol { font-size: 1em;}
+      a { 
+          color: #374092;
+          text-decoration: none;
+      }
+      footer { 
+          background-color: #fbfbfb;
+          height: 0px;
+          box-shadow: 0 0 10px 2px #666;
+          width: 100%;
+      }
+      .footer_item { 
+          color: #222222;
+          margin-left: 15px;
+      }
+      .screen_capture { 
+          margin-left: auto;
+          width: 70%;
+          margin-right: auto;
+          display: block;
+          max-width: 900px;
+      }
+      .centeredPair { 
+          margin-left: auto;
+          width: 49%;
+          margin-right: auto;
+          display: inline-block;
+          max-width: 900px;
+      }
+      .centered_image { 
+          width: 100%;
+          margin: 0 auto;
+          display: inline-block;
+          box-shadow: 1px 1px 8px 1px #999;
+      }
+      .centered_td td { 
+          text-align: center;
+          padding: 0.4em;
+      }
+      .top_td td { vertical-align: top;}
+      .centered { 
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .enlargable { cursor: zoom-in;}
+      .no_underline { text-decoration: none;}
+      .icon { width: 150px;}
+      .caption { 
+          text-align: center;
+          margin-bottom: 2px;
+          font-size: 0.9em;
+          margin-top: 2px;
+      }
+      .exampleDiv { 
+          text-align: center;
+          width: 90%;
+          margin: auto;
+      }
+      .stripe-button-el { 
+          margin-bottom: 5px;
+          margin-top: 10px;
+      }
+      form { 
+          width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      form label { 
+          text-align: right;
+          vertical-align: top;
+          margin-left: 0px;
+          display: inline-block;
+          margin-bottom: 10px;
+      }
+      form textarea { 
+          width: 600px;
+          display: inline-block;
+          height: 100px;
+          margin-bottom: 10px;
+          font-size: 19px;
+      }
+      #dimmedBackground { 
+          zIndex: 50;
+          position: fixed;
+          MsFilter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+          MozOpacity: 0.6;
+          KhtmlOpacity: 0.6;
+          background: #000;
+          left: 0;
+          height: 100%;
+          visibility: hidden;
+          width: 100%;
+          top: 0;
+          filter: alpha(opacity=60);
+          opacity: 0.75;
+      }
+    </style>
+    <link rel="shortcut icon" href="https://www.lunaverus.com/static/resources/favicons/favicon.png">
+    <title>
+
+AnthemScore | CNN
+
+    </title>
+    <script type="text/javascript">
+function toggleEnlarged(element, zoomedPath) {
+    if(typeof(zoomedPath) == 'undefined')
+      zoomedPath = element.src;
+    if(!element.hasOwnProperty('enlarged'))
+        element.enlarged = false;
+    element.enlarged = !element.enlarged;
+    if(element.enlarged) {
+        element.oldWidth = element.style.width;
+        element.oldHeight = element.style.height;
+        element.oldPosition = element.style.position;
+        element.oldLeft = element.style.left;
+        element.oldTop = element.style.top;
+        element.oldMargin = element.style.margin;
+        element.oldSrc = element.src;
+        element.src = zoomedPath;
+        if(element.width/window.innerWidth > element.height/window.innerHeight) {
+            element.style.width = "90%";
+            element.style.height = 'auto';
+        } else {
+            element.style.height = "90%";
+            element.style.width = 'auto';
+        }
+        element.style.position = 'fixed';
+        element.style.margin = 'auto';
+        element.style.left = 0;
+        element.style.right = 0;
+        element.style.top = 0;
+        element.style.bottom = 0;
+        document.getElementById("dimmedBackground").style.visibility="visible";
+    } else {
+        element.style.width = element.oldWidth;
+        element.style.height = element.oldHeight;
+        element.style.position = element.oldPosition;
+        element.style.left = element.oldLeft;
+        element.style.top = element.oldTop;
+        element.style.margin = element.oldMargin;
+        element.src = element.oldSrc;
+        document.getElementById("dimmedBackground").style.visibility="hidden";
+    }
+}
+
+function playAudio(filename, volume=0.75) {
+    var player = document.getElementById("globalPlayer");
+    player.volume = volume;
+    if(!player.paused) {
+        player.pause();
+        if(player.src.indexOf(filename) !== -1)
+            return;
+    }
+    player.src=filename;
+    player.play();
+}    </script>
+  </head>
+  <body>
+<header style="left: 0; box-shadow: 0 0 10px 0 #666; margin: 0; padding: 0; position: fixed; max-height: 15vh; background-color: #F8F8F8; width: 100%; top: 0; color: #000;">
+  <nav style="display: inline-block; float: left;">
+    <ul style="margin-bottom: 0.25em; margin-top: 0.25em;">
+      <li style="margin-top: 0px; text-align: center; margin-right: 1em; color: #000; display: inline-block; font-size: 1.5em;">
+<a href="https://www.lunaverus.com/home" class="navItem" style="text-decoration: none;">Home</a>      </li>
+      <li style="margin-top: 0px; text-align: center; margin-right: 1em; color: #000; display: inline-block; font-size: 1.5em;">
+<a href="https://www.lunaverus.com/download" class="navItem" style="text-decoration: none;">Download</a>      </li>
+      <li style="margin-top: 0px; text-align: center; margin-right: 1em; color: #000; display: inline-block; font-size: 1.5em;">
+<a href="https://www.lunaverus.com/purchase" class="navItem" style="text-decoration: none;">Purchase</a>      </li>
+      <li style="margin-top: 0px; text-align: center; margin-right: 1em; color: #000; display: inline-block; font-size: 1.5em;">
+<a href="https://www.lunaverus.com/cnn" class="navItem" style="text-decoration: none;">Blog</a>      </li>
+      <li style="margin-top: 0px; text-align: center; margin-right: 1em; color: #000; display: inline-block; font-size: 1.5em;">
+<a href="https://www.lunaverus.com/documentation" class="navItem" style="text-decoration: none;">Documentation</a>      </li>
+      <li style="margin-top: 0px; text-align: center; margin-right: 1em; color: #000; display: inline-block; font-size: 1.5em;">
+<a href="https://www.lunaverus.com/faq" class="navItem" style="text-decoration: none;">FAQ</a>      </li>
+      <li style="margin-top: 0px; text-align: center; margin-right: 1em; color: #000; display: inline-block; font-size: 1.5em;">
+<a href="https://www.lunaverus.com/about" class="navItem" style="text-decoration: none;">About</a>      </li>
+    </ul>
+  </nav>
+</header>
+
+    <section id="mainSection">
+
+<h2>Music Transcription with Convolutional Neural Networks</h2>
+
+<p>Note detection in music can be viewed as an image recognition problem. Here I'll go over some of the differences between images of things like dogs and cars and images of music. I'll also describe techniques I used to modify neural networks from computer vision to produce sheet music transcriptions of (polyphonic) music that are <a href="https://www.lunaverus.com/compare#sheet_music">actually quite playable</a>.</p>
+
+<h3>Quick Introduction to Convolutional Networks</h3>
+
+<div class="screen_capture">
+  <figure>
+    <img onclick="toggleEnlarged(this);" alt="A standard convolutional neural network, By Aphex34 (Own work) [CC BY-SA 4.0 (http://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons" class="centered_image enlargable" src="./AnthemScore _ CNN_files/Typical_cnn.png">
+    <figcaption>A standard convolutional neural network, By Aphex34 (Own work) [CC BY-SA 4.0 (http://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons</figcaption>
+  </figure>
+</div>
+
+<p>Convolutional neural networks (CNNs) have produced the most accurate results in computer vision for several years. In a typical CNN you start with an image as a 3 dimensional array (width, height, and 3 color channels) and then pass that data through several layers of convolutions, max pooling, and some kind of non-linearity, like a ReLU. The final layer outputs a score for each image class (flower, cat, etc.) representing the likelihood of the input belonging to that class. Backpropagation is used to iteratively update the convolution parameters from a set of labeled training data (pairs of input and desired output). This process builds up a sophisticated function composed of many simpler functions, primarily convolutions.</p>
+
+<h3>Images From Music</h3>
+
+<p>So, how is note detection in music similar to image recognition? We can create images of audio called spectrograms. They show how the spectrum or frequency content changes over time. If you look at the left and right channels in stereo audio as analogous to the color channels in a photograph, then a spectrogram sort of resembles the 3 dimensional image array you'd feed into an image recognition neural network.</p>
+
+<div class="screen_capture">
+  <figure>
+    <img onclick="toggleEnlarged(this);" alt="A spectrogram, vertical axis = frequency, horizontal axis = time, color shows amplitude (blue is low, red is high)" class="centered_image enlargable" src="./AnthemScore _ CNN_files/cnn_spectrogram.jpg">
+    <figcaption>A spectrogram, vertical axis = frequency, horizontal axis = time, color shows amplitude (blue is low, red is high)</figcaption>
+  </figure>
+</div>
+
+<p>But how similar conceptually is finding notes in a spectrogram image to finding objects in a photograph? Music is simpler in the sense that there are not really any important textures to learn and spectrograms are usually composed of only two basic shapes: harmonics, which are narrowband, spanning a short frequency range and long time range, and drums or other wideband features, which span a short time range and long frequency range. There's also no rotation to worry about or zooming in and out at different distance scales. Furthermore, we only really care about one object class: notes.</p>
+
+<div style="width: 30%;" class="screen_capture">
+  <figure>
+    <img onclick="toggleEnlarged(this);" alt="Harmonics of B♭ (log frequency scale)" class="centered_image enlargable" src="./AnthemScore _ CNN_files/cnn_harmonics.jpg">
+    <figcaption>Harmonics of B♭ (log frequency scale)</figcaption>
+  </figure>
+</div>
+
+<p>But a couple of aspects of notes are more challenging than images of physical objects. A note at some fundamental frequency like B♭3 (233 Hz) is composed of harmonics at multiples of that fundamental frequency, which tend to decrease in amplitude as you go up. So, unlike most physical objects, music notes aren't localized to a single region of the input.</p>
+
+<p>Also unlike physical images, harmonics from different notes can interfere with each other. In photographs, one object can be partially hidden by another, but the object in front doesn't suffer any distortion. Notes do become distorted, though. Nearby harmonics can result in amplitude "beating", which you can see in the 4th and 5th harmonics in the image above. A note recognition algorithm needs to somehow take into account these aspects of music.</p>
+
+<div style="width: 40%;" class="screen_capture">
+  <figure>
+    <img onclick="toggleEnlarged(this);" alt="Note detection is kind of like finding transparent zebras" class="centered_image enlargable" src="./AnthemScore _ CNN_files/cnn_zebras.jpg">
+    <figcaption>Note detection is kind of like finding transparent zebras</figcaption>
+  </figure>
+</div>
+
+<h3>Using a CNN</h3>
+
+<p>First of all, we want to be able to detect multiple notes at once whereas in image recognition a softmax layer ensures only one output neuron is active at a time. We can replace image classes with the 88 piano keys and get rid of the softmax layer so that multiple outputs in the final layer can be active at the same time. We also need to get output at different points along the time axis instead of just once for the entire song. My approach for this was to try and detect where notes may be starting and then take rectangular slices of the spectrogram centered at those times (the full frequency range and a fixed amount of time before and after to provide some context).</p>
+
+<div style="width: 100%;" class="screen_capture">
+  <figure>
+    <img onclick="toggleEnlarged(this);" alt="Note onset detection provides the locations for the CNN to evaluate. Regions around these locations (bounded by red rectangles) are the input into the CNN." class="centered_image enlargable" src="./AnthemScore _ CNN_files/cnn_slices.jpg">
+    <figcaption>Note onset detection provides the locations for the CNN to evaluate. Regions around these locations (bounded by red rectangles) are the input into the CNN.</figcaption>
+  </figure>
+</div>
+
+<p>Detecting possible note start times is pretty straightforward--find points in time where many frequencies increased in amplitude over some small time interval. It's ok if some of these points don't have any notes since the CNN will determine what specific notes are present, but it is bad if we miss an area where there are notes. The CNN takes these small, fixed size sections as input and determines what notes, if any, are present. I specifically trained the CNN to find which notes are *starting*, so it currently only handles the simpler problem of finding note start times and pitches. To create playable sheet music, it assumes that every note ends when the next note begins.</p>
+
+<h3>Creating the Spectrogram</h3>
+
+<p> We could use the Short Time Fourier Transform (STFT) to create the spectrogram, but there's a better way. The frequencies of the discrete Fourier Transform are spaced linearly, but musical note frequencies double with each octave (every 12 notes). If we instead use a <a href="http://academics.wellesley.edu/Physics/brown/pubs/cq1stPaper.pdf">constant Q transform</a>  (a constant frequency to bandwidth ratio), we end up with a constant number of frequency bins per note. This works well for convolutions, since the distance between the 1st and 2nd harmonics or the 2nd and 3rd, etc. is now the same for all notes, independent of fundamental frequency. This means we don't need any fully connected layers in the CNN. We can use convolutions all the way to the end and the effective weight sharing of convolutions ensures that any improvement in the ability of the network to recognize one note improves its ability to recognize notes at every other frequency. I used a spectrogram with an integer number of frequency bins per note so that after all of the max pooling layers, the output had exactly 88 neurons. The final layer was a 1x1 convolution with a single filter followed by a sigmoid.</p>
+
+<div class="screen_capture">
+  <figure style="width: 20%; display: inline-block; vertical-align: text-top;">
+    <img onclick="toggleEnlarged(this);" alt="STFT, linear frequency scale" class="centered_image enlargable" src="./AnthemScore _ CNN_files/cnn_stft.jpg" style="height: 415px;">
+    <figcaption>STFT, linear frequency scale</figcaption>
+  </figure>
+  <figure style="width: 20%; display: inline-block; vertical-align: text-top;">
+    <img onclick="toggleEnlarged(this);" alt="Same audio, constant Q transform, low Q factor with interference" class="centered_image enlargable" src="./AnthemScore _ CNN_files/cnn_low_q.jpg" style="height: 415px;">
+    <figcaption>Same audio, constant Q transform, low Q factor with interference</figcaption>
+  </figure>
+  <figure style="width: 20%; display: inline-block; vertical-align: text-top;">
+    <img onclick="toggleEnlarged(this);" alt="Dynamic Q, this is the one we want" class="centered_image enlargable" src="./AnthemScore _ CNN_files/cnn_dynamic_q.jpg" style="height: 415px;">
+    <figcaption>Dynamic Q, this is the one we want</figcaption>
+  </figure>
+</div>
+
+<p>To reduce the interference effects from nearby harmonics, I increased the Q factor in regions where nearby harmonics were detected when generating the spectrogram. This is analogous to increasing the window size in the FFT, except it was only applied to a narrow frequency and time range. A higher Q reduces amplitude distortion from nearby harmonics, but the improved frequency resolution comes at the cost of poorer time resolution, so we'd like to use a low Q factor by default to preserve information about how the amplitude changes in time. I also performed some non-linear scaling to get something closer to the log of the amplitude.</p>
+
+<h3>Tuning the CNN for Music</h3>
+
+<p>Since notes aren't localized to a single region and the CNN will need to look at the entire spectrum to determine whether any given note is present, I made many of the convolutions long and skinny. The goal was that by the final layer, every output neuron would be influenced by every input neuron. Much of the network consisted of pairs of layers: an Mx1 followed by a 1xN. These long skinny convolutions helped efficiently connect distant regions of the spectrum.</p>
+
+<div style="width: 100%;" class="screen_capture">
+  <figure>
+    <img onclick="toggleEnlarged(this);" alt="Skip connections (orange) break the CNN into a series of additions, or residuals" class="centered_image enlargable" src="./AnthemScore _ CNN_files/cnn_graph_section.png" style="background: white;">
+    <figcaption>Skip connections (orange) break the CNN into a series of additions, or residuals</figcaption>
+  </figure>
+</div>
+
+<p>I also used the forward skip connections described in <a href="https://arxiv.org/abs/1512.03385">Microsoft's ResNet</a>, which won the ILSVRC challenge in 2015. They help the network train faster and allow the output to be composed of a series of additions (residuals) on the input. This makes a lot of sense in music, where the output generally looks like the input after increasing the amplitude of the first harmonic and decreasing the amplitudes of the other harmonics. </p>
+
+<h3>Post-Processing</h3>
+
+<p>To boost the accuracy, additional processing was applied on the output of the CNN that filtered out some of the the lower confidence notes (notes with greater than 0.5 probability but less than some threshold). This involved a separate note detection algorithm, which used a more traditional approach of searching for peaks in the spectrogram, forming tracks of sequential peaks, and ordering candidate notes from most to least likely. The main idea behind this secondary algorithm is that the strongest track at any instant is very likely to be a low harmonic: a 1st, 2nd, or 3rd. The likelihood of each of these possibilities was ranked using the scores generated by the CNN. The most likely fundamental frequency was selected and all tracks at multiples of this frequency were removed from consideration. The process was repeated until there were no more tracks with strong amplitudes remaining. This algorithm produced a second semi-independent set of notes. To get the final set of notes, all of the high-confidence notes from the CNN were immediately selected, but all of the notes with lower confidences were filtered out unless they also appeared in the second list of track-based notes. The two algorithms form a kind of ensemble of detectors, but most of the value (and processing time) occurs in the CNN. </p>
+
+<h3>Training and Results</h3>
+
+<p>To train the network, I created a dataset of 2.5 million training examples from 3,000 MIDI files spanning several different genres of music. MIDI files contain information about the notes and instruments in the song, which makes it easy to create labeled truth data. A MIDI-to-WAV utility created the actual audio data used for spectrogram generation. The dataset had an average of 3 notes per training example.</p>
+
+<div style="width: 100%;" class="screen_capture">
+  <figure>
+    <img onclick="toggleEnlarged(this);" alt="Loss, note accuracy, and frame-level accuracy for training batches" class="centered_image enlargable" src="./AnthemScore _ CNN_files/cnn_training.png">
+    <figcaption>Loss, note accuracy, and frame-level accuracy for training batches</figcaption>
+  </figure>
+</div>
+
+<p>After a few days and a little over two epochs of training on a 980 Ti GPU in TensorFlow, the CNN had an accuracy of 99.200% on the evaluation split (data not used for training) at the note level. This number comes from rounding each of the 88 outputs to 0 or 1 and measuring the fraction of all outputs that matched the truth values. However, since the dataset had an average of 3 notes and 85 non-notes per training example, if the CNN never detected any notes it would be accurate 96.6% of the time with this measurement. I also measured the percentage of samples in the evaluation split where every single one of the 88 rounded outputs was correct. That came out to 60.326%. The accuracy of the entire end-to-end algorithm also depends on the accuracies of the onset time detection and filtering of the CNN’s output. For piano, only looking at note starts, it achieves F-scores around 0.8.</p>
+
+<p><a href="https://www.lunaverus.com/download">You can download and try out this software yourself. </a>The program generates musicXML files, which you can view and edit with any music notation program.</p>
+
+<p>Questions or comments? Contact me <a href="https://www.lunaverus.com/feedback">here</a> or email support@lunaverus.com.</p>
+
+
+    </section>
+    <footer>
+      <div style="text-align: center; width: 80%; padding-top: 13px;" class="centered">
+        <a href="https://www.lunaverus.com/about" class="footer_item">About</a>
+        <a href="https://www.lunaverus.com/privacy" class="footer_item">Privacy Policy</a>
+        <a href="https://www.lunaverus.com/tos" class="footer_item">Terms of Service</a>
+      </div>
+      <p style="padding-bottom: 5px; text-align: center; font-size: 0.85em;">Copyright © <script type="text/javascript">var today = new Date(); var year = today.getFullYear();document.write(year);</script>2017 Lunaverus. All rights reserved.</p>
+    </footer>
+  
+
+</body></html>

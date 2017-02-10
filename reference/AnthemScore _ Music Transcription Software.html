@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)https://www.lunaverus.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <style type="text/css">
+      html, body { 
+          margin: 0px;
+          min-height: 100%;
+          padding: 0px;
+      }
+      body { 
+          background: -webkit-linear-gradient(#D7D7D7, #FFFFFF); /* For Safari 5.1 to 6.0 */
+                             background: -o-linear-gradient(#D7D7D7, #FFFFFF); /* For Opera 11.1 to 12.0 */
+                             background: -moz-linear-gradient(#D7D7D7, #FFFFFF); /* For Firefox 3.6 to 15 */
+                             background: linear-gradient(#D7D7D7, #FFFFFF); /* Standard syntax (must be last) */;
+          font-family: "Helvetica Neue",HelveticaNeue,Helvetica,Arial,sans-serif;
+      }
+      section { 
+          padding: 2%;
+          max-width: 1100;
+          margin-left: auto;
+          margin-top: 2em;
+          margin-bottom: 1em;
+          min-height: 100vh;
+          background-color: #FDFDFD;
+          width: 80%;
+          font-size: 20px;
+          display: block;
+          border-style: none;
+          margin-right: auto;
+      }
+      .bullets { 
+          min-width: 200px;
+          max-width: 900px;
+          line-height: 150%;
+          width: 60%;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      h1, h2, h3, h4, h5, h6 { 
+          text-align: center;
+          width: 85%;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      p { 
+          font-size: 1.0em;
+          min-width: 200px;
+          font-color: #202020;
+          display: block;
+          width: 85%;
+          margin-left: auto;
+          line-height: 150%;
+          vertical-align: top;
+          box-sizing: border-box;
+          margin-right: auto;
+      }
+      .navItem { color: #202020;}
+      .featureList { 
+          width: 70%;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      ol { 
+          width: 70%;
+          font-size: 1.25em;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      ol ol { font-size: 1em;}
+      a { 
+          color: #374092;
+          text-decoration: none;
+      }
+      footer { 
+          background-color: #fbfbfb;
+          height: 0px;
+          box-shadow: 0 0 10px 2px #666;
+          width: 100%;
+      }
+      .footer_item { 
+          color: #222222;
+          margin-left: 15px;
+      }
+      .screen_capture { 
+          margin-left: auto;
+          width: 70%;
+          margin-right: auto;
+          display: block;
+          max-width: 900px;
+      }
+      .centeredPair { 
+          margin-left: auto;
+          width: 49%;
+          margin-right: auto;
+          display: inline-block;
+          max-width: 900px;
+      }
+      .centered_image { 
+          width: 100%;
+          margin: 0 auto;
+          display: inline-block;
+          box-shadow: 1px 1px 8px 1px #999;
+      }
+      .centered_td td { 
+          text-align: center;
+          padding: 0.4em;
+      }
+      .top_td td { vertical-align: top;}
+      .centered { 
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .enlargable { cursor: zoom-in;}
+      .no_underline { text-decoration: none;}
+      .icon { width: 150px;}
+      .caption { 
+          text-align: center;
+          margin-bottom: 2px;
+          font-size: 0.9em;
+          margin-top: 2px;
+      }
+      .exampleDiv { 
+          text-align: center;
+          width: 90%;
+          margin: auto;
+      }
+      .stripe-button-el { 
+          margin-bottom: 5px;
+          margin-top: 10px;
+      }
+      form { 
+          width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      form label { 
+          text-align: right;
+          vertical-align: top;
+          margin-left: 0px;
+          display: inline-block;
+          margin-bottom: 10px;
+      }
+      form textarea { 
+          width: 600px;
+          display: inline-block;
+          height: 100px;
+          margin-bottom: 10px;
+          font-size: 19px;
+      }
+      #dimmedBackground { 
+          zIndex: 50;
+          position: fixed;
+          MsFilter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+          MozOpacity: 0.6;
+          KhtmlOpacity: 0.6;
+          background: #000;
+          left: 0;
+          height: 100%;
+          visibility: hidden;
+          width: 100%;
+          top: 0;
+          filter: alpha(opacity=60);
+          opacity: 0.75;
+      }
+    </style>
+    <link rel="shortcut icon" href="https://www.lunaverus.com/static/resources/favicons/favicon.png">
+    <title>
+
+AnthemScore | Music Transcription Software
+
+    </title>
+    <script type="text/javascript">
+function toggleEnlarged(element, zoomedPath) {
+    if(typeof(zoomedPath) == 'undefined')
+      zoomedPath = element.src;
+    if(!element.hasOwnProperty('enlarged'))
+        element.enlarged = false;
+    element.enlarged = !element.enlarged;
+    if(element.enlarged) {
+        element.oldWidth = element.style.width;
+        element.oldHeight = element.style.height;
+        element.oldPosition = element.style.position;
+        element.oldLeft = element.style.left;
+        element.oldTop = element.style.top;
+        element.oldMargin = element.style.margin;
+        element.oldSrc = element.src;
+        element.src = zoomedPath;
+        if(element.width/window.innerWidth > element.height/window.innerHeight) {
+            element.style.width = "90%";
+            element.style.height = 'auto';
+        } else {
+            element.style.height = "90%";
+            element.style.width = 'auto';
+        }
+        element.style.position = 'fixed';
+        element.style.margin = 'auto';
+        element.style.left = 0;
+        element.style.right = 0;
+        element.style.top = 0;
+        element.style.bottom = 0;
+        document.getElementById("dimmedBackground").style.visibility="visible";
+    } else {
+        element.style.width = element.oldWidth;
+        element.style.height = element.oldHeight;
+        element.style.position = element.oldPosition;
+        element.style.left = element.oldLeft;
+        element.style.top = element.oldTop;
+        element.style.margin = element.oldMargin;
+        element.src = element.oldSrc;
+        document.getElementById("dimmedBackground").style.visibility="hidden";
+    }
+}
+
+function playAudio(filename, volume=0.75) {
+    var player = document.getElementById("globalPlayer");
+    player.volume = volume;
+    if(!player.paused) {
+        player.pause();
+        if(player.src.indexOf(filename) !== -1)
+            return;
+    }
+    player.src=filename;
+    player.play();
+}    </script>
+  </head>
+  <body>
+<header style="left: 0; box-shadow: 0 0 10px 0 #666; margin: 0; padding: 0; position: fixed; max-height: 15vh; background-color: #F8F8F8; width: 100%; top: 0; color: #000;">
+  <nav style="display: inline-block; float: left;">
+    <ul style="margin-bottom: 0.25em; margin-top: 0.25em;">
+      <li style="margin-top: 0px; text-align: center; margin-right: 1em; color: #000; display: inline-block; font-size: 1.5em;">
+<a href="https://www.lunaverus.com/home" class="navItem" style="text-decoration: none;">Home</a>      </li>
+      <li style="margin-top: 0px; text-align: center; margin-right: 1em; color: #000; display: inline-block; font-size: 1.5em;">
+<a href="https://www.lunaverus.com/download" class="navItem" style="text-decoration: none;">Download</a>      </li>
+      <li style="margin-top: 0px; text-align: center; margin-right: 1em; color: #000; display: inline-block; font-size: 1.5em;">
+<a href="https://www.lunaverus.com/purchase" class="navItem" style="text-decoration: none;">Purchase</a>      </li>
+      <li style="margin-top: 0px; text-align: center; margin-right: 1em; color: #000; display: inline-block; font-size: 1.5em;">
+<a href="https://www.lunaverus.com/cnn" class="navItem" style="text-decoration: none;">Blog</a>      </li>
+      <li style="margin-top: 0px; text-align: center; margin-right: 1em; color: #000; display: inline-block; font-size: 1.5em;">
+<a href="https://www.lunaverus.com/documentation" class="navItem" style="text-decoration: none;">Documentation</a>      </li>
+      <li style="margin-top: 0px; text-align: center; margin-right: 1em; color: #000; display: inline-block; font-size: 1.5em;">
+<a href="https://www.lunaverus.com/faq" class="navItem" style="text-decoration: none;">FAQ</a>      </li>
+      <li style="margin-top: 0px; text-align: center; margin-right: 1em; color: #000; display: inline-block; font-size: 1.5em;">
+<a href="https://www.lunaverus.com/about" class="navItem" style="text-decoration: none;">About</a>      </li>
+    </ul>
+  </nav>
+</header>
+
+    <section id="mainSection">
+
+
+
+<div id="dimmedBackground"></div>
+
+<audio id="globalPlayer"></audio>
+
+<h2>Accurate Music Transcription Software</h2>
+
+<p>AnthemScore is a program designed to automatically create sheet music from audio (MP3, WAV, etc.) as accurately as possible. It uses a convolutional neural network trained on 2 million data samples.</p>
+
+<p>It produces sheet music in MusicXML format, which you can view and edit with any standard music notation software. If you choose to install MuseScore, a popular free notation program, sheet music will open automatically when processing is finished.</p>
+
+<div class="exampleDiv">
+  <div style="width: 70%; margin-left: auto; margin-right: auto;"></div>
+  <div class="centeredPair">
+    <img onclick="toggleEnlarged(this, &#39;/static/resources/Pachelbel - Clip From Canon in D (Guitar) Screenshot.large.png&#39;);" alt="" class="centered_image enlargable" src="./AnthemScore _ Music Transcription Software_files/Pachelbel - Clip From Canon in D (Guitar) Screenshot.png">
+  </div>
+  <div class="centeredPair">
+    <img onclick="toggleEnlarged(this);" alt="" class="centered_image enlargable" src="./AnthemScore _ Music Transcription Software_files/Pachelbel - Clip From Canon in D (Guitar) Sheet Music.png" style="background: white; padding: 10px; margin-top: 7px;">
+  </div>
+  <p class="caption">A screenshot and some sheet music generated by AnthemScore</p>
+  <br>
+  <br>
+</div>
+
+<p>There are several features for analyzing music. You can view a frequency/time plot, slow the tempo, play on a virtual keyboard, and save sheet music in a different key or in only the treble clef or bass clef. Currently, no instrument information is extracted, so notes from all instruments get combined into one part. It can take several minutes to process one song. <a href="https://www.lunaverus.com/documentation">Read the full documentation here.</a></p>
+
+<h2>Examples</h2>
+
+<p>Here are a few examples of music automatically transcribed with AnthemScore. The accuracy depends on the complexity of the song and the instruments used. You can generally expect the best results from piano pieces.</p>
+
+<div class="exampleDiv">
+  <div style="width: 70%; margin-left: auto; margin-right: auto;"></div>
+  <div class="centeredPair">
+    <img onclick="playAudio(&#39;/static/resources/Coldplay%20-%20Clip%20From%20Clocks%20(HD%20Piano%20Cover).mp3&#39;);" src="./AnthemScore _ Music Transcription Software_files/play_icon.png" width="20px" style="cursor: pointer;">
+    <span style="margin-right: 20px;">Original</span>
+    <img onclick="playAudio(&#39;/static/resources/Coldplay%20-%20Clip%20From%20Clocks%20(HD%20Piano%20Cover)%20Transcription.mp3&#39;, 0.4);" src="./AnthemScore _ Music Transcription Software_files/play_icon.png" width="20px" style="cursor: pointer;">
+    <span>Transcription</span>
+    <img onclick="toggleEnlarged(this);" alt="" class="centered_image enlargable" src="./AnthemScore _ Music Transcription Software_files/Coldplay - Clip From Clocks (HD Piano Cover) Sheet Music.png" style="background: white; padding: 10px; margin-top: 7px;">
+    <p class="caption">Most of the notes here are correct. Song clip courtesy of <a href="https://www.youtube.com/watch?v=lQgQ78fKmj0">Francesco Parrino</a>.</p>
+  </div>
+  <br>
+  <br>
+</div>
+
+<div class="exampleDiv">
+  <div style="width: 70%; margin-left: auto; margin-right: auto;"></div>
+  <div class="centeredPair">
+    <img onclick="playAudio(&#39;/static/resources/Gary%20Jules%20-%20Clip%20From%20Mad%20World%20(Piano%20Cover).mp3&#39;);" src="./AnthemScore _ Music Transcription Software_files/play_icon.png" width="20px" style="cursor: pointer;">
+    <span style="margin-right: 20px;">Original</span>
+    <img onclick="playAudio(&#39;/static/resources/Gary%20Jules%20-%20Clip%20From%20Mad%20World%20(Piano%20Cover)%20Transcription.mp3&#39;, 0.4);" src="./AnthemScore _ Music Transcription Software_files/play_icon.png" width="20px" style="cursor: pointer;">
+    <span>Transcription</span>
+    <img onclick="toggleEnlarged(this);" alt="" class="centered_image enlargable" src="./AnthemScore _ Music Transcription Software_files/Gary Jules - Clip From Mad World (Piano Cover) Sheet Music.png" style="background: white; padding: 10px; margin-top: 7px;">
+    <p class="caption">In this clip it's able to capture large piano chords. The bass clef notes end too soon, because             the program currently only focuses on note start times and pitches. Song clip from <a href="https://www.youtube.com/watch?v=qp-C5dXuhvs">Frank Tedesco's arrangement</a>.</p>
+  </div>
+  <br>
+  <br>
+</div>
+
+<div class="exampleDiv">
+  <div style="width: 70%; margin-left: auto; margin-right: auto;"></div>
+  <div class="centeredPair">
+    <img onclick="playAudio(&#39;/static/resources/Prokofiev%20-%20Clip%20From%20Battle%20On%20The%20Ice.mp3&#39;);" src="./AnthemScore _ Music Transcription Software_files/play_icon.png" width="20px" style="cursor: pointer;">
+    <span style="margin-right: 20px;">Original</span>
+    <img onclick="playAudio(&#39;/static/resources/Prokofiev%20-%20Clip%20From%20Battle%20On%20The%20Ice%20Transcription.mp3&#39;, 0.4);" src="./AnthemScore _ Music Transcription Software_files/play_icon.png" width="20px" style="cursor: pointer;">
+    <span>Transcription</span>
+    <img onclick="toggleEnlarged(this);" alt="" class="centered_image enlargable" src="./AnthemScore _ Music Transcription Software_files/Prokofiev - Clip From Battle On The Ice Sheet Music.png" style="background: white; padding: 10px; margin-top: 7px;">
+    <p class="caption">Fewer of the notes here are correct. Full orchestra is one of the most challenging categories to transcribe. One or two instrument pieces like piano covers are generally more accurate.</p>
+  </div>
+  <br>
+  <br>
+</div>
+
+<h2>More Information</h2>
+
+<p>
+<a href="https://www.lunaverus.com/cnn">How the algorithm works.</a></p>
+
+<p>
+<a href="https://www.lunaverus.com/compare#sheet_music">More transcription examples</a></p>
+
+<p>
+<a href="https://www.lunaverus.com/visualizations">Visualizations of music from different genres</a></p>
+
+<p><a href="https://www.lunaverus.com/download">Download</a> it for Windows, OS X, and Linux.</p>
+
+
+    </section>
+    <footer>
+      <div style="text-align: center; width: 80%; padding-top: 13px;" class="centered">
+        <a href="https://www.lunaverus.com/about" class="footer_item">About</a>
+        <a href="https://www.lunaverus.com/privacy" class="footer_item">Privacy Policy</a>
+        <a href="https://www.lunaverus.com/tos" class="footer_item">Terms of Service</a>
+      </div>
+      <p style="padding-bottom: 5px; text-align: center; font-size: 0.85em;">Copyright © <script type="text/javascript">var today = new Date(); var year = today.getFullYear();document.write(year);</script>2017 Lunaverus. All rights reserved.</p>
+    </footer>
+  
+
+</body></html>
