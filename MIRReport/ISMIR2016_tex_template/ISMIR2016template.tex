@@ -1,0 +1,148 @@
+% -----------------------------------------------
+% Template for ISMIR Papers
+% 2016 version, based on previous ISMIR templates
+
+% Requirements :
+% * 6+1 page length maximum
+% * 2MB maximum file size
+% * Copyright note must appear in the bottom left corner of first page
+% (see conference website for additional details)
+% -----------------------------------------------
+
+\documentclass{article}
+\usepackage{ismir,amsmath,cite}
+\usepackage{graphicx}
+\usepackage{color}
+
+% Title.
+% ------
+\title{Classifiers on Various Features for Auto Music Transcription \conferenceyear}
+
+% Note: Please do NOT use \thanks or a \footnote in any of the author markup
+
+% Single address
+% To use with only one author or several with the same address
+% ---------------
+%\oneauthor
+% {Names should be omitted for double-blind reviewing}
+% {Affiliations should be omitted for double-blind reviewing}
+
+% Two addresses
+% --------------
+%\twoauthors
+%  {First author} {School \\ Department}
+%  {Second author} {Company \\ Address}
+
+%% To make customize author list in Creative Common license, uncomment and customize the next line
+%  \def\authorname{First Author, Second Author} 
+
+
+% Three addresses
+% --------------
+\threeauthors
+  {Nora Huang} {Department of Computer Science\\
+University of Victoria\\
+Victoria, B.C, Canada \\ {\tt norah@uvic.ca}}
+  {Aazim Lakhani} {Department of Computer Science\\
+University of Victoria\\
+Victoria, B.C, Canada \\ {\tt aazimlakhani@uvic.ca}}
+  {Parul Smaddar} {Department of Computer Science\\
+University of Victoria\\
+Victoria, B.C, Canada \\ {\tt author3@ismir.edu}}
+
+%% To make customize author list in Creative Common license, uncomment and customize the next line
+%  \def\authorname{First Author, Second Author, Third Author} 
+
+% Four or more addresses
+% OR alternative format for large number of co-authors
+% ------------
+%\multauthor
+%{First author$^1$ \hspace{1cm} Second author$^1$ \hspace{1cm} Third author$^2$} { \bfseries{Fourth author$^3$ \hspace{1cm} Fifth author$^2$ \hspace{1cm} Sixth author$^1$}\\
+%  $^1$ Department of Computer Science, University , Country\\
+%$^2$ International Laboratories, City, Country\\
+%$^3$  Company, Address\\
+%{\tt\small CorrespondenceAuthor@ismir.edu, PossibleOtherAuthor@ismir.edu}
+%}
+%\def\authorname{First author, Second author, Third author, Fourth author, Fifth author, Sixth author}
+
+
+\sloppy % please retain sloppy command for improved formatting
+
+\begin{document}
+
+%
+\maketitle
+%
+\begin{abstract}
+The Objective of this work is to evaluate the accuracy of auto-transcription by extracting features from the audio music and apply different classifiers on it to get the note. We are aimed at transcription on certain types of music instruments, for example strings. Only the main instrument of the polyphonic music will be transcribed.
+\end{abstract}
+%
+\section{Introduction}\label{sec:introduction}
+The Dataset of this work will collected. The requirement of the dataset should contain certain types of instrument like string and it should come with the corresponding music scores which we can used as labels for training and testing. The collected dataset will be reconstructed to pieces which contain the same number of notes in order for easier evaluation.\\
+Then acoustics features such MFCC, STFT, Auto-corr, etc. will be extracted from the audio music. \\
+The extracted features will be used as the input to the classifiers for note transcription. Several different classifier will be involved in this stage in order to compare their performance in terms of accuracy. The features will be used individually as well as combatively. So we will have different combination of features and classifiers.\\
+The accuracy test will perform on each combinations and a compare over them will be provided at the evaluation section.\\
+Python will be the main programming language for this work. Marsyas will the library used for Acoustic features extraction while Scipy  will be used for the data mining classifier. 
+
+
+\subsection{Timeline}\label{subsec:Timeline}
+Dataset collection by \\
+Features and Classifier selection based on papers by\\
+Features extraction implementation by\\
+Classifier implementation by \\
+System integration for training by
+Run the test and get result by\\
+Report should be update after every previous steps
+
+
+\subsection{Role of team member}\label{subsec:Role of team member}
+Nora: Architecture design, team management, coding
+Aasim:\\
+Parul:\\
+ 
+%
+\section{Dataset}\label{sec:Dataset}
+The Dataset we used for this work is collected on line. And we will organize it in the structure as we need.
+
+\section{Acoustic features for training}\label{sec:features}
+MFCC, STFT, Auto-corr, etc
+
+\section{Classifiers}\label{sec:Classifiers}
+SVM etc.
+
+
+\section{Result}\label{sec:Result}
+Accuracy will be the matrix for the measurement.
+
+\section{Conclusion}\label{sec:Conclusion}
+Basic on the result we should be able to figure out which combination is best for auto music transcription objective.
+
+
+
+\section{References}
+
+
+% For bibtex users:
+\bibliography{ISMIRtemplate}
+
+% For non bibtex users:
+%\begin{thebibliography}{citations}
+%
+%\bibitem {Author:00}
+%E. Author.
+%``The Title of the Conference Paper,''
+%{\it Proceedings of the International Symposium
+%on Music Information Retrieval}, pp.~000--111, 2000.
+%
+%\bibitem{Someone:10}
+%A. Someone, B. Someone, and C. Someone.
+%``The Title of the Journal Paper,''
+%{\it Journal of New Music Research},
+%Vol.~A, No.~B, pp.~111--222, 2010.
+%
+%\bibitem{Someone:04} X. Someone and Y. Someone. {\it Title of the Book},
+%    Editorial Acme, Porto, 2012.
+%
+%\end{thebibliography}
+
+\end{document}
