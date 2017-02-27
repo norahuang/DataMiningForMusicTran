@@ -12,8 +12,7 @@
 - Decisions Takes
 
   * Reviewed Project Report Draft
-  * Data Set Collection 
-  * 
+  
 - Action item:
   * Data Set Collection
   <br>
@@ -44,4 +43,10 @@
   <br>
     Parul 
 
-
+  * List of reference documents , we'll be using & have used for to prepare the report. 
+  <br>
+    Nora
+	
+#### Blockers:
+  * Finalize data set to be used. This would help us decide the instruments to be used for transcription & also Monophonic & polyphonic sounds. 
+  * Features to be used based on the papers we have read.
