@@ -85,7 +85,7 @@ The extracted features will be used as input to the classifiers for note transcr
 Marsyas would be used as the framework for acoustic features extraction. Python \& Scikit-learn would be used to prepare the learning model, which would eventually, transcribe.  
 
 \begin{figure}
-\includegraphics[scale=.7]{System_Flow_Diagram}
+\includegraphics[scale=.55]{System_Flow_Diagram}
 \\System Flow Diagram
 \end{figure}
 
@@ -100,8 +100,8 @@ Report should be update after every previous steps
 
 
 \subsection{Role of team member}\label{subsec:Role of team member}
-Nora: Architecture design, team management, coding
-Aazim: Work on machine learning side of this project
+Nora: Architecture design, team management, coding\\
+Aazim: Training \& testing with different combinations of classifiers \& features\\
 Parul:\\
  
 %

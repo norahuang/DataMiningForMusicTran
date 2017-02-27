@@ -1,4 +1,4 @@
-### Meeting 1
+### Meeting 2
 
   __Date:__ Feb 16, 2017
   __Beginning time:__ 15:00
