@@ -13,10 +13,12 @@
 \usepackage{ismir,amsmath,cite}
 \usepackage{graphicx}
 \usepackage{color}
+\usepackage{booktabs}
+
 
 % Title.
 % ------
-\title{Automatic Music Transcription \conferenceyear}
+\title{Classifiers on Various Features for Auto Music Transcription \conferenceyear}
 
 % Note: Please do NOT use \thanks or a \footnote in any of the author markup
 
@@ -48,7 +50,7 @@ University of Victoria\\
 Victoria, B.C, Canada \\ {\tt aazimlakhani@uvic.ca}}
   {Parul Smaddar} {Department of Computer Science\\
 University of Victoria\\
-Victoria, B.C, Canada \\ {\tt author3@ismir.edu}}
+Victoria, B.C, Canada \\ {\tt parulsmaddar@gmail.com}}
 
 %% To make customize author list in Creative Common license, uncomment and customize the next line
 %  \def\authorname{First Author, Second Author, Third Author} 
@@ -74,52 +76,75 @@ Victoria, B.C, Canada \\ {\tt author3@ismir.edu}}
 \maketitle
 %
 \begin{abstract}
-The objective of this project is to evaluate the accuracy of various models to perform automatic music transcription by extracting features from the audio music and applying different classifiers to get the note. Through this initiative we plan to focus at transcription on certain music instruments. Furthermore, only the main instrument of the polyphonic music will be transcribed.
+The Objective of this work is to evaluate the accuracy of auto-transcription by extracting features from the audio music and apply different classifiers on it to get the note. We are aimed at transcription on certain types of music instruments, for example strings. Only the main instrument of the polyphonic music will be transcribed.
 \end{abstract}
 %
 \section{Introduction}\label{sec:introduction}
-The dataset for this project will collected through MIDI Aligned Piano Sounds (MAPS) , Isophonics Annotations , KSN Database to name a few. The sources claim the data is used for transcriptions of both monophonic \& polyphonic instruments. The datasets are annotated \& we would evaluate the data to use music relevant for this project.  \\\\
-Then acoustics features such as Zero Crossing Rate, Autocorrelation, YIN metrics for time domain \& FFT , STFT , Spectrogram , cestrum metrics, spectral flux for the frequency domain would be used to extract notes from audio music. \\\\
-The extracted features will be used as input to the classifiers for note transcription. Different classifiers, such as K-NN, Logistic Regression, Stochastic Gradient Descent, Support Vector Machines (SVM) would be evaluated for accuracy. Features would be combined together to give better accuracy on real world data.\\
-\\
-Marsyas would be used as the framework for acoustic features extraction. Python \& Scikit-learn would be used to prepare the learning model, which would eventually, transcribe.  
+The Dataset of this work will collected. The requirement of the dataset should contain certain types of instrument like string and it should come with the corresponding music scores which we can used as labels for training and testing. The collected dataset will be reconstructed to pieces which contain the same number of notes in order for easier evaluation.\\
+Then MFCC , STFT , Auto-correlation etc. would be used to extract acoustic features.\\
+The extracted features will be used as the input to the classifiers for note transcription. Several different classifier will be involved in this stage in order to compare their performance in terms of accuracy. The features will be used individually as well as combatively. So we will have different combination of features and classifiers.\\
+The accuracy test will perform on each combinations and a compare over them will be provided at the evaluation section.\\
+Python will be the main programming language for this work. Marsyas will the library used for Acoustic features extraction while Scipy  will be used for the data mining classifier. 
 
-\begin{figure}
-\includegraphics[scale=.55]{System_Flow_Diagram}
-\\System Flow Diagram
-\end{figure}
++\begin{figure}
+ +\includegraphics[scale=.55]{System_Flow_Diagram}
+ +\\System Flow Diagram
+ +\end{figure}
+\section{Overview}
+The overview diagram is as Figure 1. The classifiers are trained by the train dataset.
+
+
 
 \subsection{Timeline}\label{subsec:Timeline}
-Dataset collection by \\
-Features and Classifier selection based on papers by\\
-Features extraction implementation by\\
-Classifier implementation by \\
-System integration for training by
-Run the test and get result by\\
-Report should be update after every previous steps
+We make 4 milestone for the whole project, for each task there will be two responsible team member for it, one as primary while the other as secondary. Please find the detail of the milestone in Table \ref{table1}
+\begin{table}[h]
+ \begin{center}
+\begin{tabular}{c|c|c|c|c}
+        \toprule
+         MileStones & Deadline & Tasks & Primary & Secondary  \\
+       \midrule
+        %\midline
+        MileStone1 & March 6 & Dataset & Aasim & Nora \\
+         &  & Features   & Parul & Nora \\
+         &  & Classifier  & Nora & Aasim \\
+        \midrule
+        MileStone2 & March 13 & Train & TBD  &  TBD    \\
+        \midrule
+        MileStone3 & March27 & Testing & TBD &  TBD   \\
+                \midrule
+        MileStone4 & March30 & Report &TBD  & TBD    \\
+        \bottomrule
+        %Note. Values are given as mean $\pm$ SD.   &                      &                     \\
+\end{tabular}
+\end{center}
+ \caption{Milestones}
+ \label{table1}
+\end{table}
 
 
 \subsection{Role of team member}\label{subsec:Role of team member}
-Nora: Architecture design, team management, coding\\
-Aazim: Training \& testing with different combinations of classifiers \& features\\
+Nora: Architecture design, team management, coding
+Aasim:\\
 Parul:\\
+
  
 %
 \section{Dataset}\label{sec:Dataset}
-We obtained data for both monophonic and polyphonic sounds through MAPS. We're also in the process of having data from Isophonics Annotations \& KSN Database. 
+The Dataset we used for this work is collected on line. And we will organize it in the structure as we need.
+
 
 \section{Acoustic features for training}\label{sec:features}
-Time Domain : Zero Crossing Rate, Autocorrelation, YIN metrics Frequency Domain : FFT , STFT , Spectrogram , cestrum metrics, spectral flux.
+MFCC, STFT, Auto-corr, etc
 
 \section{Classifiers}\label{sec:Classifiers}
-Stochastic Gradient Descent, Logistic Regression, Support Vector Machines
+SVM etc.
 
 
 \section{Result}\label{sec:Result}
-This would comprise of the collection of features, classifiers used to give the highest level accuracy. Various combinations would be tried, but only the one's that generalize well, would be mentioned in the result. 
+Accuracy will be the matrix for the measurement.
 
 \section{Conclusion}\label{sec:Conclusion}
-Basic on the result we should be able to figure out which combination is best for automatic music transcription.
+Basic on the result we should be able to figure out which combination is best for auto music transcription objective.
 
 
 
