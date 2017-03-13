@@ -8,3 +8,4 @@
 cat m*.mf > m.mf
 bextract m*.mf -w m.arff
 
+
