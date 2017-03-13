@@ -1,0 +1,1 @@
+sed -i.bak '/0.000000,0.000000,0.000000,0.000000/d' ./MARSYAS_EMPTYm_multi_copy.arff
