@@ -94,6 +94,7 @@ Ranked attributes:
  0.5321    33 Std_Mem20_Centroid_Power_powerFFT_WinHamming_HopSize512_WinSize512_Sum_AudioCh0
  0.5223    12 Mean_Mem20_MFCC7_Power_powerFFT_WinHamming_HopSize512_WinSize512_Sum_AudioCh0
  0.5159    13 Mean_Mem20_MFCC8_Power_powerFFT_WinHamming_HopSize512_WinSize512_Sum_AudioCh0
+ %% First entropy threshold
  0.4907    32 Std_Mem20_ZeroCrossings_HopSize512_WinSize512_Sum_AudioCh0
  0.4886     6 Mean_Mem20_MFCC1_Power_powerFFT_WinHamming_HopSize512_WinSize512_Sum_AudioCh0
  0.4479     1 Mean_Mem20_ZeroCrossings_HopSize512_WinSize512_Sum_AudioCh0
@@ -111,6 +112,7 @@ Ranked attributes:
  0.343     42 Std_Mem20_MFCC6_Power_powerFFT_WinHamming_HopSize512_WinSize512_Sum_AudioCh0
  0.3413    36 Std_Mem20_MFCC0_Power_powerFFT_WinHamming_HopSize512_WinSize512_Sum_AudioCh0
  0.3121    37 Std_Mem20_MFCC1_Power_powerFFT_WinHamming_HopSize512_WinSize512_Sum_AudioCh0
+ %% Second entropy threshold
  0.2786    41 Std_Mem20_MFCC5_Power_powerFFT_WinHamming_HopSize512_WinSize512_Sum_AudioCh0
  0.2732    40 Std_Mem20_MFCC4_Power_powerFFT_WinHamming_HopSize512_WinSize512_Sum_AudioCh0
  0.2677     7 Mean_Mem20_MFCC2_Power_powerFFT_WinHamming_HopSize512_WinSize512_Sum_AudioCh0
