@@ -1,0 +1,35 @@
+== Evaluation Info
+
+Classifier                     meka.classifiers.multilabel.CT
+Options                        [-H, -1, -L, 1, -X, Ibf, -Is, 0, -Iy, 10, -P, Exact match, -S, 0, -W, weka.classifiers.trees.J48, --, -C, 0.25, -M, 2]
+Additional Info                0.0
+Dataset                        MARSYAS_EMPTY.arff
+Number of labels (L)           4
+Type                           MT
+Verbosity                      3
+
+
+== Predictive Performance
+
+N(test)                        42991
+L                              4    
+Hamming score                  0.755
+Exact match                    0.71 
+Hamming loss                   0.245
+ZeroOne loss                   0.29 
+Levenshtein distance           0.245
+Label indices                  [     0     1     2     3 ]
+Accuracy (per label)           [ 0.789 0.754 0.752 0.724 ]
+
+
+== Additional Measurements
+
+Number of training instances   83451
+Number of test instances       42991
+Label cardinality (train set)  189.353
+Label cardinality (test set)   189.215
+Build Time                     125.338
+Test Time                      12.392
+Total Time                     137.73
+
+
