@@ -1,0 +1,33 @@
+== Evaluation Info
+
+Classifier                     meka.classifiers.multilabel.BCC
+Options                        [-X, Ibf, -S, 0, -W, weka.classifiers.trees.J48, --, -C, 0.25, -M, 2]
+Additional Info                [0, 1]
+Dataset                        P2.arff
+Number of labels (L)           2
+Type                           MT-CV
+Verbosity                      3
+
+
+== Predictive Performance
+
+N(test)                        95034
+L                              2    
+Hamming score                  0.813
+Exact match                    0.788
+Hamming loss                   0.187
+ZeroOne loss                   0.212
+Levenshtein distance           0.187
+Label indices                  [     0     1 ]
+Accuracy (per label)           [ 0.825 0.801 ]
+
+
+== Additional Measurements (averaged across folds)
+
+Number of training instances   95034
+Number of test instances       95034
+Label cardinality (train set)  90.085
+Label cardinality (test set)   90.085
+Build Time                     43.133
+Test Time                      0.266
+Total Time                     43.399
