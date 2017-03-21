@@ -1,0 +1,35 @@
+== Evaluation Info
+
+Classifier                     meka.classifiers.multilabel.BCC
+Options                        [-X, Ibf, -S, 0, -W, weka.classifiers.lazy.IBk, --, -K, 1, -W, 0, -A, weka.core.neighboursearch.LinearNNSearch -A "weka.core.EuclideanDistance -R first-last"]
+Additional Info                [0, 1]
+Dataset                        P2.arff
+Number of labels (L)           2
+Type                           MT-CV
+Verbosity                      3
+
+
+== Predictive Performance
+
+N(test)                        95034
+L                              2    
+Hamming score                  0.966
+Exact match                    0.961
+Hamming loss                   0.034
+ZeroOne loss                   0.039
+Levenshtein distance           0.034
+Label indices                  [     0     1 ]
+Accuracy (per label)           [ 0.963 0.969 ]
+
+
+== Additional Measurements (averaged across folds)
+
+Number of training instances   95034
+Number of test instances       95034
+Label cardinality (train set)  90.085
+Label cardinality (test set)   90.085
+Build Time                     0.876
+Test Time                      204.304
+Total Time                     205.179
+
+
