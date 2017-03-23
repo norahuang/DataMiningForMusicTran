@@ -1,0 +1,12 @@
+[2017-03-22 14:06:39] Loading: C:\UVic\MIR\Project\CSC575MIRFinalProject\dataset\P3 results\p3.arff
+[2017-03-22 14:06:41] Loaded successfully: C:\UVic\MIR\Project\CSC575MIRFinalProject\dataset\P3 results\p3.arff
+[2017-03-22 14:08:48] Preprocess: Filtering data: weka.filters.unsupervised.attribute.Remove -R 7-8,10,21-32,38,41-44,52-63
+[2017-03-22 14:08:48] Preprocess: Data filtered successfully!
+[2017-03-22 14:09:32] Classify: Cross-validating...
+[2017-03-22 14:09:32] Classify: meka.classifiers.multilabel.BCC -X Ibf -S 0 -W weka.classifiers.lazy.IBk -- -K 1 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+[2017-03-22 14:09:32] Classify: Dataset: MARSYAS_EMPTY.arff: -C 3
+[2017-03-22 14:09:32] Classify: Class-index: 3
+[2017-03-22 14:53:59] Classify: Finished
+[2017-03-22 14:57:33] Saving: C:\UVic\MIR\Project\CSC575MIRFinalProject\dataset\P3 results\IBk\entropy-03\p3.arff
+[2017-03-22 14:57:35] Saved successfully: C:\UVic\MIR\Project\CSC575MIRFinalProject\dataset\P3 results\IBk\entropy-03\p3.arff
+
