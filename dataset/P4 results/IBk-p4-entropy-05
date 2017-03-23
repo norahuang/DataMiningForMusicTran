@@ -1,0 +1,35 @@
+== Evaluation Info
+
+Classifier                     meka.classifiers.multilabel.BCC
+Options                        [-X, Ibf, -S, 0, -W, weka.classifiers.lazy.IBk, --, -K, 1, -W, 0, -A, weka.core.neighboursearch.LinearNNSearch -A "weka.core.EuclideanDistance -R first-last"]
+Additional Info                [0, 2, 3, 1]
+Dataset                        MARSYAS_EMPTY.arff
+Number of labels (L)           4
+Type                           MT-CV
+Verbosity                      3
+
+
+== Predictive Performance
+
+N(test)                        126442
+L                              4    
+Hamming score                  0.885
+Exact match                    0.877
+Hamming loss                   0.115
+ZeroOne loss                   0.123
+Levenshtein distance           0.114
+Label indices                  [     0     1     2     3 ]
+Accuracy (per label)           [ 0.882 0.882 0.884 0.894 ]
+
+
+== Additional Measurements (averaged across folds)
+
+Number of training instances   126442
+Number of test instances       126442
+Label cardinality (train set)  189.306
+Label cardinality (test set)   189.306
+Build Time                     3.195
+Test Time                      413.619
+Total Time                     416.814
+
+
