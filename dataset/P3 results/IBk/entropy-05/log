@@ -1,0 +1,9 @@
+[2017-03-22 14:59:29] Loading: C:\UVic\MIR\Project\CSC575MIRFinalProject\dataset\P3 results\p3_entropy_05.arff
+[2017-03-22 14:59:30] Loaded successfully: C:\UVic\MIR\Project\CSC575MIRFinalProject\dataset\P3 results\p3_entropy_05.arff
+[2017-03-22 15:00:02] Classify: Cross-validating...
+[2017-03-22 15:00:02] Classify: meka.classifiers.multilabel.BCC -X Ibf -S 0 -W weka.classifiers.lazy.IBk -- -K 1 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+[2017-03-22 15:00:02] Classify: Dataset: MARSYAS_EMPTY.arff: -C 3
+[2017-03-22 15:00:02] Classify: Class-index: 3
+[2017-03-22 15:26:57] Classify: Finished
+[2017-03-22 15:41:19] Log: Log successfully saved to: C:\UVic\MIR\Project\CSC575MIRFinalProject\dataset\P3 results\IBk\entropy-05\log
+
