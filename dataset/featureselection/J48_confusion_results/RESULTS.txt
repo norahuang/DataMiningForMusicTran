@@ -1,0 +1,18 @@
+% ORIGINAL
+Highest misclassified note at x y position: 17, 16  (q,p) with value of: 55
+
+% LEARNER
+Highest misclassified note at x y position: 17, 16  (q,p) with value of: 66
+
+% ENTROPY: 05
+Highest misclassified note at x y position: 12, 13 (l, m) with value of: 73
+
+% ENTROPY: 03
+Highest misclassified note at x y position: 17, 16  (q,p) with value of: 75
+
+% PEARSON: 02
+Highest misclassified note at x y position: 17, 16  (q,p) with value of: 61
+
+% PEARSON: 03
+Highest misclassified note at x y position: 11, 10 (k,j) with value of: 72
+

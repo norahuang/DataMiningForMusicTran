@@ -1,0 +1,1 @@
+This folder contains the WEKA files with each configured feature subset. All the data values are included here, but have different @data columns. These files should be used as input for each of the following classifiers: IBK, J48, SMO, randomtree.
