@@ -14,6 +14,7 @@
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{booktabs}
+
 \usepackage{array}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -83,13 +84,13 @@ Automatic music transcription is an active research topic in the field of Music 
 \end{abstract}
 %
 \section{Introduction}\label{sec:introduction}
-Automatic music transcription is the process of translating an audio music signal into a musical score sheet[1]. There are many applications of this technology, such as helping a student learn how to play music for well known soundtracks using a specific instrument. It could do so by building playable score sheets they could use for practice. It could also allow a musician or composer to record their improvised performance [2] and share their work for others to reproduce. There are various approaches to achieve these goals [3] [7]. 
+Automatic music transcription is the process of translating an audio music signal into a musical score sheet\cite{Duan2015-nt}. There are many applications of this technology, such as helping a student learn how to play music for well known soundtracks using a specific instrument. It could do so by building playable score sheets they could use for practice. It could also allow a musician or composer to record their improvised performance\cite{Benetos2013-io} and share their work for others to reproduce. There are various approaches to achieve these goals\cite{Ming2014-cj,Lee2012-dd,Anan2012-up,Sigtia2016-sz,Poliner2005-ow}. 
 
 An ideal piece of music for transcription has clear, simple, and easily differentiable sounds. However in reality, song compositions are complex pieces of work with many different instruments and human voices. Addressing this complexity is a significant challenge. This project focuses on the problem of monophonic and polyphonic piano music for up to 4 notes. Monophonic includes a single melodic line with no accompaniment, while polyphonic may have multiple melodic lines mostly independent or in imitation of one another. In other words, this project focuses exclusively on music composed with up to 4 notes played simultaneously.
 
-This project builds a unique model to recognize keys used to played music notes to support music transcription. First, windows are applied to the input music files to segment the audio into frames around 11ms in length. In total, it retrieves 512 digital samples per frame. In total, 63 features are extracted from each frame. These acoustic features are post-processed by removing silent frames or values and labelling each non-silent frame, then analysed with either Weka [8] and Meka [9] to reduce the set into several reasonably sized feature subsets.  The selected features are those having high entropy or co-relation, which are then passed through well known classifiers to prepare a model. 
+This project builds a unique model to recognize keys used to played music notes to support music transcription. First, windows are applied to the input music files to segment the audio into frames around 11ms in length. In total, it retrieves 512 digital samples per frame. In total, 63 features are extracted from each frame. These acoustic features are post-processed by removing silent frames or values and labelling each non-silent frame, then analysed with either Weka\cite{Holmes1994-kg} and Meka\cite{Read2012-sh} to reduce the set into several reasonably sized feature subsets.  The selected features are those having high entropy or co-relation, which are then passed through well known classifiers to prepare a model. 
 
-Weka is used to analyse monophonic music which can simplified as the single-label classification problem. Conversely, Meka is a multi-label classification extension of Weka to  analyse polyphonic music, equivalent to a multilabel classification problem. Polyphonic music exposes the challenge of detecting the right keys used to play a chord when several others notes from potentially many different instruments are played simultaneously. This project reduces the scope of the problem by focusing on single-instrument audio tracks, leaving only the problem of detecting each note in a chord. In total, Multilabel classification [10] is applied using 4 classifiers: IBK [11], J48 [12], SMO [13], and RandomTree [14]. 
+Weka is used to analyse monophonic music which can simplified as the single-label classification problem. Conversely, Meka is a multi-label classification extension of Weka to  analyse polyphonic music, equivalent to a multilabel classification problem. Polyphonic music exposes the challenge of detecting the right keys used to play a chord when several others notes from potentially many different instruments are played simultaneously. This project reduces the scope of the problem by focusing on single-instrument audio tracks, leaving only the problem of detecting each note in a chord. In total, Multilabel classification\cite{Herrera2016-ep} is applied using 4 classifiers: IBK\cite{Aha1991-ir}, J48\cite{Ross_Quinlan2014-rg}, SMO\cite{Platt1999-iq}, and RandomTree\cite{Dugan2015-fn}. 
 
 The overview of the project model is described in Figure \ref{figure1}. The classifiers are trained and tested based on this model.
 
@@ -104,7 +105,7 @@ The structure of the report is as follows: first, the dataset for the project is
  
 %
 \section{Dataset}\label{sec:Dataset}
-The model described in Section 1, Figure\ref{figure1} is evaluated using the MIDI (Musical Instrument Digital Interface)  Aligned Piano Sounds (MAPS) dataset [15]. Due to copyright licensing, there are a limited number of datasets available for research. MAPS is a widely used piano database for multipitch estimation and automatic transcription of music. It provides recordings with CD quality (16-bit , 44 kHz sampled stereo audio) sounds. It is freely available under the Creative Commons License. It consists of audio files with corresponding annotations for isolated sounds, chords, and complete pieces of piano music under various different recording conditions, including various closed rooms and close ambient takes. MAPS can be divided into 4 sets: \\\\
+The model described in Section 1, Figure\ref{figure1} is evaluated using the MIDI (Musical Instrument Digital Interface)  Aligned Piano Sounds (MAPS) dataset\cite{Emiya2010-ki}. Due to copyright licensing, there are a limited number of datasets available for research. MAPS is a widely used piano database for multipitch estimation and automatic transcription of music. It provides recordings with CD quality (16-bit , 44 kHz sampled stereo audio) sounds. It is freely available under the Creative Commons License. It consists of audio files with corresponding annotations for isolated sounds, chords, and complete pieces of piano music under various different recording conditions, including various closed rooms and close ambient takes. MAPS can be divided into 4 sets: \\\\
 ISOL (isolated notes and musical excerpts)\\
 RAND (Chords with random pitch notes.)\\
 UCHO (Usual chords from Western music)\\
@@ -113,24 +114,23 @@ For monophonic music, we use 2 second notes from the ISOL dataset. This is defin
 \section{Feature Extraction}\label{sec:features}
 In the signal processing domain, feature extraction is one of the most widely used methods to analyse a signal. There are several parts to one audio signal offering varying amounts of useful information. This section explores some of these features and selects some for use based on how much they contribute to the goal of automatic music transcription.
 \subsection{Feature Extraction Tool}
-Marsyas (Music Analysis, Retrieval and Synthesis for Audio Signals) is an open source software framework for audio processing with specific emphasis on MIR applications [21]. Bextract is one of the most powerful executables provided by Marsyas. It can be used for complete feature extraction and classification experiments with multiple files. However its classification feature is limited and did not fulfill the requirement of this project. As such, only the feature extraction functionality is used.
+Marsyas (Music Analysis, Retrieval and Synthesis for Audio Signals) is an open source software framework for audio processing with specific emphasis on MIR applications \cite{Tzanetakis2000-xp}. Bextract is one of the most powerful executables provided by Marsyas. It can be used for complete feature extraction and classification experiments with multiple files. However its classification feature is limited and did not fulfill the requirement of this project. As such, only the feature extraction functionality is used.
 \subsection{Feature Extraction Strategy}
 Using Bextract provided, the features for each frame are extracted. By default, the frame size of Bextract is 512 samples which matches the dataset sampled from MAPS. In total, it extracts 63 features from each frame. The results are formatted and stored in .arff format file for later processing. Bextract further handles the labeling for each item by using a single label - it does not support multi-labelling. As such, for the polyphonic music requiring multi-labeling, they are manually labeled with multiple values corresponding to the notes it consists of. This is done by post-processed the output .arff files with a script uniquely created for this project. This enables the data to be run directly on Meka. The script derives the labels for the output from the corresponding .txt annotations provided with the sound from MAPS. 
 \subsection{Acoustic Features}
 From each frame, 63 acoustic features were extracted. They are combinations of the following 5 parameters:\\
-\textbf{Time-domain Zero-Crossings}  is the point where the sign of a mathematical function changes (e.g.,  from positive to negative), represented by a crossing of the axis (zero value) in the graph of the function [16]. It is a commonly used term in electronics, mathematics, sound, and image processing.\\
-\textbf{Spectral Centroid} is a measure used in digital signal processing to characterise a spectrum. It indicates where the "center of mass" of the spectrum is. Perceptually, it has a robust connection with the impression of "brightness" of a sound [17].\\
-\textbf{Rolloff} is the steepness of a transmission function with frequency [18].\\
-\textbf{Flux} is a measure of how quickly the power spectrum of a signal is changing, calculated by comparing the power spectrum for one frame against the power spectrum from the previous frame [19]. More precisely, it is usually calculated as the 2-norm (also known as the Euclidean distance) between the two normalised spectra.\\
-\textbf{Mel-Frequency Cepstral Coefficients} are coefficients that collectively make up an  mel-frequency cepstrum (MFC) [20]. In sound processing, the MFC is a representation of the short-term power spectrum of a sound, based on a linear cosine transform of a log power spectrum on a nonlinear mel scale of frequency.
-
+\textbf{Time-domain Zero-Crossings}  is the point where the sign of a mathematical function changes (e.g.,  from positive to negative), represented by a crossing of the axis (zero value) in the graph of the function\cite{Bundy1984-fo}. It is a commonly used term in electronics, mathematics, sound, and image processing.\\
+\textbf{Spectral Centroid} is a measure used in digital signal processing to characterise a spectrum. It indicates where the "center of mass" of the spectrum is. Perceptually, it has a robust connection with the impression of "brightness" of a sound.\\
+\textbf{Rolloff} is the steepness of a transmission function with frequency.\\
+\textbf{Flux} is a measure of how quickly the power spectrum of a signal is changing, calculated by comparing the power spectrum for one frame against the power spectrum from the previous frame. More precisely, it is usually calculated as the 2-norm (also known as the Euclidean distance) between the two normalised spectra.\\
+\textbf{Mel-Frequency Cepstral Coefficients} are coefficients that collectively make up an  mel-frequency cepstrum (MFC). In sound processing, the MFC is a representation of the short-term power spectrum of a sound, based on a linear cosine transform of a log power spectrum on a nonlinear mel scale of frequency.
 \section{Feature Selection}
 The feature set produced by Bextract, while effective, is a large feature set making human understanding of the data difficult. Feature selection was needed in order to reduce the usable attribute set from 63 into a more reasonable size. This section outlines the approach and result of feature set selection.
 \subsection{Filter-based Selection}
-There are multiple techniques that may be used to reduce a feature set, including using domain knowledge of the data to manually reduce it, tailoring the set for a specific classifier, or using a systematic filter-based approach [22]. Due to the complexity of the notes and their acoustic features, and the desire to have a general feature set for use in any classifier, the systematic approach was used to decide which features were most useful.\\
+There are multiple techniques that may be used to reduce a feature set, including using domain knowledge of the data to manually reduce it, tailoring the set for a specific classifier, or using a systematic filter-based approach\cite{hall1999correlation}. Due to the complexity of the notes and their acoustic features, and the desire to have a general feature set for use in any classifier, the systematic approach was used to decide which features were most useful.\\
 Three approaches were used to create 5 feature sets for each PN dataset: 1) learner, 2) entropy, and 3) pearson correlation coefficient. The accuracy results of each feature set was compared against the original for 4 different classifiers in 5-fold cross validation. In order to create a standardized set selection across the datasets (i.e., they all have the same thresholds and features), the P1 dataset was selected as the baseline. That is, the feature subsets generated for P1 were assumed to be sufficient for P2 - P4.
 \subsection{Results}
-WEKA’s ‘select attributes’ toolset [23] was used to generate data for each approach. Two feature subsets were created from the entropy results; any attribute that provided an information gain greater or equal to 0.05 was used in the first entropy feature data set. A second set was created using a threshold of 0.05. Similarly, the pearson result was split into two feature subset using threshold values of 0.03 and 0.02. The threshold values were chosen by observation as they provided either approximately half the original feature set or slightly less which was agreed to be a reasonable attribute set size. Table\ref{table1} summarizes the results.
+WEKA’s ‘select attributes’ toolset\cite{hall2003benchmarking} was used to generate data for each approach. Two feature subsets were created from the entropy results; any attribute that provided an information gain greater or equal to 0.05 was used in the first entropy feature data set. A second set was created using a threshold of 0.05. Similarly, the pearson result was split into two feature subset using threshold values of 0.03 and 0.02. The threshold values were chosen by observation as they provided either approximately half the original feature set or slightly less which was agreed to be a reasonable attribute set size. Table\ref{table1} summarizes the results.
 \begin{table}[h]
  \begin{center}
   \caption{Feature subset selection attribute size results}
@@ -222,7 +222,7 @@ Table \ref{table3} summarizes the result of each classifier on each feature subs
 \\\textbf{J48 Analysis}\\
 It was found that the initialization of all J48 trees for each feature subset was identical. That is, each set of attributes derived the same root node and first layer of their J48 classifier. However, to emphasize the differences between the feature set trees, Figures 5 through 10 depict the general structures of each.
 \begin{figure}[h]
-\includegraphics[scale=.45]{treenotes}
+\includegraphics[scale=.35]{treenotes}
  \caption{Root Node and First layer for all P1 instances}
 \label{figure3}
 \end{figure}
@@ -256,21 +256,18 @@ It is not surprising that the feature sets have similar misclassified note inter
 
 
 \subsection{P2 Dataset}
+TBD...
 
 \subsection{P3 Dataset}
-
+TBD...
 \subsection{P4 Dataset}
-
+TBD...
 \subsection{Exact Match Accuracy Comparison for PN Dataset}
-
+TBD...
 \section{Conclusion}\label{sec:Conclusion}
-
+TBD...
 \section{Future Work}
-
-
-
-\section{References}
-
+TBD...
 % For bibtex users:
 \bibliography{ISMIRtemplate}
 
