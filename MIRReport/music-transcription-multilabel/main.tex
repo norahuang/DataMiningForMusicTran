@@ -13,7 +13,8 @@
 \usepackage{ismir,amsmath,cite}
 \usepackage{graphicx}
 \usepackage{color}
-\usepackage{booktabs,chemformula}
+\usepackage{booktabs}
+\usepackage{placeins}
 
 \usepackage{array}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -130,10 +131,11 @@ The feature set produced by Bextract, while effective, is a large feature set ma
 There are multiple techniques that may be used to reduce a feature set, including using domain knowledge of the data to manually reduce it, tailoring the set for a specific classifier, or using a systematic filter-based approach\cite{hall1999correlation}. Due to the complexity of the notes and their acoustic features, and the desire to have a general feature set for use in any classifier, the systematic approach was used to decide which features were most useful.\\
 Three approaches were used to create 5 feature sets for each PN dataset: 1) learner, 2) entropy, and 3) pearson correlation coefficient. The accuracy results of each feature set was compared against the original for 4 different classifiers in 5-fold cross validation. In order to create a standardized set selection across the datasets (i.e., they all have the same thresholds and features), the P1 dataset was selected as the baseline. That is, the feature subsets generated for P1 were assumed to be sufficient for P2 - P4.
 \subsection{Results}
-WEKA’s ‘select attributes’ toolset\cite{hall2003benchmarking} was used to generate data for each approach. Two feature subsets were created from the entropy results; any attribute that provided an information gain greater or equal to 0.05 was used in the first entropy feature data set. A second set was created using a threshold of 0.05. Similarly, the pearson result was split into two feature subset using threshold values of 0.03 and 0.02. The threshold values were chosen by observation as they provided either approximately half the original feature set or slightly less which was agreed to be a reasonable attribute set size. Table\ref{table1} summarizes the results.
+WEKA’s ‘select attributes’ toolset\cite{hall2003benchmarking} was used to generate data for each approach. Two feature subsets were created from the entropy results; any attribute that provided an information gain greater or equal to 0.05 was used in the first entropy feature data set. A second set was created using a threshold of 0.05. Similarly, the pearson result was split into two feature subset using threshold values of 0.03 and 0.02. The threshold values were chosen by observation as they provided either approximately half the original feature set or slightly less which was agreed to be a reasonable attribute set size. 
 \begin{table}[h]
  \begin{center}
   \caption{Feature subset selection attribute size results}
+    \label{table1}
 \begin{tabular}{|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
       \hline
          Filter Algorithm & Threshold & Attributes Size & Reduced \% \\
@@ -155,16 +157,15 @@ WEKA’s ‘select attributes’ toolset\cite{hall2003benchmarking} was used to 
         %Note. Values are given as mean $\pm$ SD.   &                      &                     \\
 \end{tabular}
 \end{center}
- \label{table1}
 \end{table}
-
+Table \ref{table1} summarizes the results.
 \section{Preprocessing with Normalization}
 Normalization scales all numeric variables in the range [0,1] to ensure the outputs are scale invariant. In other words, it makes sure big values don’t dominate smaller ones. One possible formula is given below:\\\\
 $\chi_{new} = \dfrac{\chi-\chi_{min}}{\chi_{max}-\chi_{min}}$\\\\
-Normalization was used on the P1 original dataset (i.e., with all 63 attributes) to determine if this technique could improve the accuracy of the results. As seen in Table\ref{table2}, the results of normalization did not significantly improve the accuracy of 4 different classifiers. This result meant that normalization was not applied, and was not attempted for the remaining P2-P4 datasets.
 \begin{table}[h]
  \begin{center}
   \caption{Accuracy Results Compare (\%)}
+   \label{table2}
 \begin{tabular}{|C{2cm}|C{1cm}|C{1cm}|C{1cm}|C{1.5cm}|}
       \hline
           & IBK & J48  & SMO &Random tree \\
@@ -177,8 +178,9 @@ Normalization was used on the P1 original dataset (i.e., with all 63 attributes)
        \hline
 \end{tabular}
 \end{center}
- \label{table2}
 \end{table}
+Normalization was used on the P1 original dataset (i.e., with all 63 attributes) to determine if this technique could improve the accuracy of the results. As seen in Table \ref{table2}, the results of normalization did not significantly improve the accuracy of 4 different classifiers. This result meant that normalization was not applied, and was not attempted for the remaining P2-P4 datasets.
+
 
 \section{Multilabel Classification}\label{sec:Classifiers}
 In MIR, multi-label classification are usually used to identify genres or emotion recognition, but are not used in transcription. Current research into automatic transcription tends to focus only on either the main melody, or on the approach by separating the multiple melodic lines and processing them individually. This project explores multilabel classification for polyphonic transcription by treating each note from the multiple melodic lines as a label, where each label is one of 88 classes corresponding to 88 piano keys (i.e., 11 octaves of 8 notes).\\
@@ -194,6 +196,7 @@ Table \ref{table3} summarizes the result of each classifier on each feature subs
 \begin{table}[h]
  \begin{center}
   \caption{Accuracy results of different feature subsets on different classifiers (\%)}
+   \label{table3}
 \begin{tabular}{|C{2cm}|C{1cm}|C{1cm}|C{1cm}|C{1.5cm}|}
       \hline
           Filter (Threshold)& IBK & J48  & SMO &Random tree \\
@@ -212,7 +215,6 @@ Table \ref{table3} summarizes the result of each classifier on each feature subs
        \hline
 \end{tabular}
 \end{center}
- \label{table3}
 \end{table}
 \begin{figure}[h]
 \includegraphics[scale=.65]{accuracy_p1}
@@ -220,7 +222,7 @@ Table \ref{table3} summarizes the result of each classifier on each feature subs
 \label{figure2}
 \end{figure}
 \\\textbf{J48 Analysis}\\
-It was found that the initialization of all J48 trees for each feature subset was identical. That is, each set of attributes derived the same root node and first layer of their J48 classifier. However, to emphasize the differences between the feature set trees, Figures 5 through 10 depict the general structures of each.
+It was found that the initialization of all J48 trees for each feature subset was identical. That is, each set of attributes derived the same root node and first layer of their J48 classifier. 
 \begin{figure}[h]
 \includegraphics[scale=.35]{treenotes}
  \caption{Root Node and First layer for all P1 instances}
@@ -232,6 +234,7 @@ The confusion matrix of each feature set was reviewed. The intersection of notes
 \begin{table}[h]
 \begin{center}
 \caption{P1 Feature subset highest confusion results}
+ \label{table4}
 \begin{tabular}{|C{2cm}|C{2cm}|C{2cm}|}
       \hline
           Filter (Threshold)& Intersection& Notes \\
@@ -250,7 +253,6 @@ The confusion matrix of each feature set was reviewed. The intersection of notes
        \hline
 \end{tabular}
 \end{center}
-\label{table4}
 \end{table}
 It is not surprising that the feature sets have similar misclassified note intersections. It is reasonable to expect that similar sounding notes would be consistently misclassified no matter which subset and classifier were used. 
 
@@ -268,6 +270,7 @@ In Table \ref{table5} and  \ref{table6}, it is clear that IBK has highest accura
 \begin{table*}[h]
 \centering
 \caption{Percent Accuracy results of different feature subsets on different classifiers for P2}
+\label{table5}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
 \hline
@@ -281,13 +284,13 @@ Pearson (0.03)        & 99.0  & 99.1  & 99.0        & 82.5  & 80.1  & 78.8      
 Pearson (0.02)        & 97.6  & 98.0  & 97.5        & 82.5  & 80.2  & 79.0        & 82.9  & 80.6  & 78.2        \\ \hline
 \end{tabular}%
 }
-\label{table5}
 \end{table*}
 
 
 \begin{table}[h]
  \begin{center}
   \caption{Training and Testing times for P2}
+   \label{table6}
 \begin{tabular}{|C{1.5cm}|C{1cm}|C{1cm}|C{2.5cm}|}
       \hline
          Random Tree Time(S) & J48 Time(S) & IBK Time(S) & P2 Filter(Threshold)  \\
@@ -309,7 +312,6 @@ Pearson (0.02)        & 97.6  & 98.0  & 97.5        & 82.5  & 80.2  & 79.0      
         %Note. Values are given as mean $\pm$ SD.   &                      &                     \\
 \end{tabular}
 \end{center}
- \label{table6}
 \end{table}
 
 Figure \ref{figure4} and \ref{figure5} are visual representations of Table \ref{table5} and \ref{table6}. It is clear to see the similar performances of all the results.
@@ -330,12 +332,12 @@ Figure \ref{figure4} and \ref{figure5} are visual representations of Table \ref{
 
 
 \subsection{P3 Dataset}
-This dataset has 3 musical notes being played simultaneously. Table 7 summarizes the accuracy for the dataset against the 3 classifiers, and table 8 summarizes the run times.
+This dataset has 3 musical notes being played simultaneously. Table \ref{table7} and Figure \ref{figure6} summarizes the accuracy for the dataset against the 3 classifiers, and Table \ref{table9} and Figure \ref{figure7} summarizes the run times.
 
 \begin{table*}[h]
 \centering
 \caption{Percent Accuracy results of different feature subsets on different classifiers for P3}
-\label{my-label}
+\label{table7}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 \hline
@@ -351,9 +353,29 @@ Pearson (0.02)        & 97.7  & 97.8  & 98.0   & 97.6        & 81.0  & 75.6  & 7
 }
 \end{table*}
 
+\begin{table*}[h]
+\centering
+\caption{Percent Accuracy results of different feature subsets on different classifiers for P4}
+\label{table8}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+P4 Filter (threshold) & IBK   &       &        &       &             & J48   &       &       &       &             & Random Tree &       &       &       &             \\ \hline
+                      & note1 & note2 & note 3 & note4 & exact match & note1 & note2 & note3 & note4 & exact match & note1       & note2 & note3 & note4 & exact match \\ \hline
+Original              & 96.6  & 96.7  & 96.7   & 96.9  & 96.5        & 76..9 & 70.7  & 73.3  & 74.0  & 79.7        & 79.4        & 75.5  & 77.1  & 77.8  & 61.9        \\ \hline
+Learner               & 98.5  & 98.5  & 98.5   & 98.6  & 98.4        & 80.7  & 74.5  & 77.3  & 77.9  & 70.5        & 81.3        & 75.1  & 77.6  & 77.9  & 69.0        \\ \hline
+Entropy (0.05)        & 88.2  & 88.2  & 88.4   & 89.4  & 87.7        & 78.3  & 72.0  & 74.7  & 75.4  & 76.4        & 78.3        & 72.0  & 74.7  & 75.4  & 66.8        \\ \hline
+Entropy (0.03)        & 96.1  & 96.1  & 96.2   & 96.5  & 96.0        & 80.0  & 73.9  & 76.6  & 77.0  & 69.7        & 79.8        & 73.9  & 76.3  & 77.3  & 66.9        \\ \hline
+Pearson (0.03)        & 99.0  & 99.0  & 99.0   & 99.0  & 98.9        & 80.1  & 73.7  & 76.5  & 77.1  & 69.6        & 80.4        & 73.7  & 76.6  & 76.4  & 66.9        \\ \hline
+Pearson (0.02)        & 97.8  & 97.8  & 97.9   & 98.0  & 97.7        & 79.7  & 73.5  & 76.2  & 76.8  & 69.4        & 80.6        & 74.9  & 77.2  & 78.3  & 66.9        \\ \hline
+\end{tabular}%
+}
+\end{table*}
+
 \begin{table}[h]
  \begin{center}
   \caption{Training and Testing times for P3}
+   \label{table9}
 \begin{tabular}{|C{1.5cm}|C{1cm}|C{1cm}|C{2.5cm}|}
       \hline
          Random Tree Time(S) & J48 Time(S) & IBK Time(S) & P4 Filter(Threshold)  \\
@@ -375,50 +397,41 @@ Pearson (0.02)        & 97.7  & 97.8  & 98.0   & 97.6        & 81.0  & 75.6  & 7
         %Note. Values are given as mean $\pm$ SD.   &                      &                     \\
 \end{tabular}
 \end{center}
- \label{table1}
 \end{table}
 
 \begin{figure}[h]
 \includegraphics[scale=.65]{accuracy_p3}
  \caption{Accuracy for each dataset and classifiers for P3 datasets}
-\label{figure2}
+\label{figure6}
 \end{figure}
 \begin{figure}[h]
 \includegraphics[scale=.50]{time_p3}
  \caption{Train and Test Time for each dataset and classifiers(P3)}
-\label{figure2}
+\label{figure7}
 \end{figure}
 
 
 \subsection{P4 Dataset}
-This dataset has 4 musical notes being played simultaneously. Table 9 summarizes the accuracy results. Table 10 summarizes the test time.
+This dataset has 4 musical notes being played simultaneously. Table ~\ref{table8} and Figure \ref{figure8} summarizes the accuracy results. Table \ref{table10} and Figure \ref{figure9} summarizes the test time.
 
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 
-\begin{table*}[h]
-\centering
-\caption{Percent Accuracy results of different feature subsets on different classifiers for P4}
-\label{my-label}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
-\hline
-P4 Filter (threshold) & IBK   &       &        &       &             & J48   &       &       &       &             & Random Tree &       &       &       &             \\ \hline
-                      & note1 & note2 & note 3 & note4 & exact match & note1 & note2 & note3 & note4 & exact match & note1       & note2 & note3 & note4 & exact match \\ \hline
-Original              & 96.6  & 96.7  & 96.7   & 96.9  & 96.5        & 76..9 & 70.7  & 73.3  & 74.0  & 79.7        & 79.4        & 75.5  & 77.1  & 77.8  & 61.9        \\ \hline
-Learner               & 98.5  & 98.5  & 98.5   & 98.6  & 98.4        & 80.7  & 74.5  & 77.3  & 77.9  & 70.5        & 81.3        & 75.1  & 77.6  & 77.9  & 69.0        \\ \hline
-Entropy (0.05)        & 88.2  & 88.2  & 88.4   & 89.4  & 87.7        & 78.3  & 72.0  & 74.7  & 75.4  & 76.4        & 78.3        & 72.0  & 74.7  & 75.4  & 66.8        \\ \hline
-Entropy (0.03)        & 96.1  & 96.1  & 96.2   & 96.5  & 96.0        & 80.0  & 73.9  & 76.6  & 77.0  & 69.7        & 79.8        & 73.9  & 76.3  & 77.3  & 66.9        \\ \hline
-Pearson (0.03)        & 99.0  & 99.0  & 99.0   & 99.0  & 98.9        & 80.1  & 73.7  & 76.5  & 77.1  & 69.6        & 80.4        & 73.7  & 76.6  & 76.4  & 66.9        \\ \hline
-Pearson (0.02)        & 97.8  & 97.8  & 97.9   & 98.0  & 97.7        & 79.7  & 73.5  & 76.2  & 76.8  & 69.4        & 80.6        & 74.9  & 77.2  & 78.3  & 66.9        \\ \hline
-\end{tabular}%
-}
-\end{table*}
-
+\begin{figure}[h]
+\includegraphics[scale=.50]{accuracy_p4}
+ \caption{Accuracy for each dataset and classifiers for P4 datasets}
+\label{figure8}
+\end{figure}
+\begin{figure}[h]
+\includegraphics[scale=.50]{time_p4}
+ \caption{Train and Test Time for each dataset and classifiers(P4)}
+\label{figure9}
+\end{figure}
 
 \begin{table}[h]
  \begin{center}
   \caption{Training and Testing times for P4}
+  \label{table10}
 \begin{tabular}{|C{1.5cm}|C{1cm}|C{1cm}|C{2.5cm}|}
       \hline
          Random Tree Time(S) & J48 Time(S) & IBK Time(S) & P4 Filter(Threshold)  \\
@@ -440,32 +453,21 @@ Pearson (0.02)        & 97.8  & 97.8  & 97.9   & 98.0  & 97.7        & 79.7  & 7
         %Note. Values are given as mean $\pm$ SD.   &                      &                     \\
 \end{tabular}
 \end{center}
- \label{table1}
 \end{table}
 
-\begin{figure}[h]
-\includegraphics[scale=.50]{accuracy_p4}
- \caption{Accuracy for each dataset and classifiers for P4 datasets}
-\label{figure2}
-\end{figure}
-\begin{figure}[h]
-\includegraphics[scale=.50]{time_p4}
- \caption{Train and Test Time for each dataset and classifiers(P4)}
-\label{figure2}
-\end{figure}
 
 \subsection{Exact Match Accuracy Comparison for PN Dataset}
 
-In this section we compare the exact match accuracy over different monophonic and polyphonic notes data set with various feature sets. It is not surprising that, the higher number of notes a dataset has, the lower accuracy the classifier provides. Interestingly, this misclassification margin is somewhat consistent across the datasets. Overall, IBK offers the highest accuracy while RandomTree is the lowest. Table 11 summarizes these findings.
+In this section we compare the exact match accuracy over different monophonic and polyphonic notes data set with various feature sets. It is not surprising that, the higher number of notes a dataset has, the lower accuracy the classifier provides. Interestingly, this misclassification margin is somewhat consistent across the datasets. Overall, IBK offers the highest accuracy while RandomTree is the lowest. Table \ref{table11} summarizes these findings.
 
 \begin{table*}[h]
 \centering
 \caption{Summary of exact match percentages across all datasets}
-\label{my-label}
+\label{table11}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 \hline
-P4 Filter (threshold) & IBK &  &  &  & J48 &  &  &  & Random Tree &  &  &  \\ \hline
+Filter (threshold) & IBK &  &  &  & J48 &  &  &  & Random Tree &  &  &  \\ \hline
  & P1 & P2 & P3 & P4 & P1 & P2 & P3 & P4 & P1 & P2 & P3 & P4 \\ \hline
 Original & 98.0 & 96.1 & 96.3 & 96.7 & 89.0 & 79.7 & 75.1 & 79.7 & 87.7 & 76.9 & 68.6 & 61.9 \\ \hline
 Learner & 97.4 & 98.3 & 98.4 & 98.4 & 88.5 & 79.5 & 74.8 & 70.5 & 87.6 & 78.3 & 72.2 & 69 \\ \hline
@@ -489,6 +491,7 @@ The results of this project support the ultimate goal of MIR to audio transcript
 
 
 % For bibtex users:
+\FloatBarrier
 \bibliography{ISMIRtemplate}
 
 % For non bibtex users:
