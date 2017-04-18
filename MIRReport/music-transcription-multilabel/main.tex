@@ -13,7 +13,7 @@
 \usepackage{ismir,amsmath,cite}
 \usepackage{graphicx}
 \usepackage{color}
-\usepackage{booktabs}
+\usepackage{booktabs,chemformula}
 
 \usepackage{array}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -230,8 +230,8 @@ It was found that the initialization of all J48 trees for each feature subset wa
 The confusion matrix of each feature set was reviewed. The intersection of notes with the highest misclassified percentage value is summarized in Table \ref{table4}.
 
 \begin{table}[h]
- \begin{center}
-  \caption{P1 Feature subset highest confusion results}
+\begin{center}
+\caption{P1 Feature subset highest confusion results}
 \begin{tabular}{|C{2cm}|C{2cm}|C{2cm}|}
       \hline
           Filter (Threshold)& Intersection& Notes \\
@@ -250,25 +250,24 @@ The confusion matrix of each feature set was reviewed. The intersection of notes
        \hline
 \end{tabular}
 \end{center}
- \label{table4}
+\label{table4}
 \end{table}
 It is not surprising that the feature sets have similar misclassified note intersections. It is reasonable to expect that similar sounding notes would be consistently misclassified no matter which subset and classifier were used. 
 
 
 \subsection{P2 Dataset}
-This dataset has 2 musical notes being played simultaneously. Table 6 summarizes the percentage output of the accuracy for each feature set. The accuracy is considered as note1 being correctly classified, note2 being correctly classified, all notes are exactly being classified. The train and test time are also summarized in this section. Even though we spread the test over different computers and the running time varies on different machines, we can still see the trend of it.  For P2-P4 dataset SMO is almost impossible without high computation power. Attempting this classifier on the original dataset it took overnight without finishing. It was not a feasible classifier to use for audio transcription. As such it was skipped for P2-P4 due to poor performance. 
+This dataset has 2 musical notes being played simultaneously. Table \ref{table5} summarizes the percentage output of the accuracy for each feature set. The accuracy is considered as note1 being correctly classified, note2 being correctly classified, all notes are exactly being classified. The train and test time are also summarized in this section. Even though we spread the test over different computers and the running time varies on different machines, we can still see the trend of it.  For P2-P4 dataset SMO is almost impossible without high computation power. Attempting this classifier on the original dataset it took overnight without finishing. It was not a feasible classifier to use for audio transcription. As such it was skipped for P2-P4 due to poor performance. 
 
-In table 6, it is clear that IBK has highest accuracy but takes the longest amount of time compared to the other two classifiers. The entropy dataset with threshold of 0.05 consistently has the worst performance, while the remainder all have similar accuracy results. 
+In Table \ref{table5} and  \ref{table6}, it is clear that IBK has highest accuracy but takes the longest amount of time compared to the other two classifiers. The entropy dataset with threshold of 0.05 consistently has the worst performance, while the remainder all have similar accuracy results. 
 
 
 
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 
-\begin{table*}[]
+\begin{table*}[h]
 \centering
 \caption{Percent Accuracy results of different feature subsets on different classifiers for P2}
-\label{my-label}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
 \hline
@@ -282,6 +281,7 @@ Pearson (0.03)        & 99.0  & 99.1  & 99.0        & 82.5  & 80.1  & 78.8      
 Pearson (0.02)        & 97.6  & 98.0  & 97.5        & 82.5  & 80.2  & 79.0        & 82.9  & 80.6  & 78.2        \\ \hline
 \end{tabular}%
 }
+\label{table5}
 \end{table*}
 
 
@@ -309,21 +309,21 @@ Pearson (0.02)        & 97.6  & 98.0  & 97.5        & 82.5  & 80.2  & 79.0      
         %Note. Values are given as mean $\pm$ SD.   &                      &                     \\
 \end{tabular}
 \end{center}
- \label{table1}
+ \label{table6}
 \end{table}
 
-Figures 4 and 5 are visual representations of tables 5 and 6. It is clear to see the similar performances of all the results.
+Figure \ref{figure4} and \ref{figure5} are visual representations of Table \ref{table5} and \ref{table6}. It is clear to see the similar performances of all the results.
 
 \begin{figure}[h]
 \includegraphics[scale=.65]{accuracy_p2}
  \caption{Accuracy for each dataset and classifiers for P2 datasets}
-\label{figure2}
+\label{figure4}
 \end{figure}
 
 \begin{figure}[h]
 \includegraphics[scale=.65]{time_p2}
  \caption{Train and Test Time for each dataset and classifiers(P2)}
-\label{figure2}
+\label{figure5}
 \end{figure}
 
 
@@ -332,7 +332,7 @@ Figures 4 and 5 are visual representations of tables 5 and 6. It is clear to see
 \subsection{P3 Dataset}
 This dataset has 3 musical notes being played simultaneously. Table 7 summarizes the accuracy for the dataset against the 3 classifiers, and table 8 summarizes the run times.
 
-\begin{table*}[]
+\begin{table*}[h]
 \centering
 \caption{Percent Accuracy results of different feature subsets on different classifiers for P3}
 \label{my-label}
@@ -396,7 +396,7 @@ This dataset has 4 musical notes being played simultaneously. Table 9 summarizes
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 
-\begin{table*}[]
+\begin{table*}[h]
 \centering
 \caption{Percent Accuracy results of different feature subsets on different classifiers for P4}
 \label{my-label}
@@ -458,7 +458,7 @@ Pearson (0.02)        & 97.8  & 97.8  & 97.9   & 98.0  & 97.7        & 79.7  & 7
 
 In this section we compare the exact match accuracy over different monophonic and polyphonic notes data set with various feature sets. It is not surprising that, the higher number of notes a dataset has, the lower accuracy the classifier provides. Interestingly, this misclassification margin is somewhat consistent across the datasets. Overall, IBK offers the highest accuracy while RandomTree is the lowest. Table 11 summarizes these findings.
 
-\begin{table*}[]
+\begin{table*}[h]
 \centering
 \caption{Summary of exact match percentages across all datasets}
 \label{my-label}
@@ -486,17 +486,6 @@ Pearson (0.02) & 99.1 & 97.5 & 97.6 & 97.7 & 88.1 & 79 & 73.9 & 69.4 & 87.9 & 78
 This exploratory project used the MAPS dataset for various audio files, ranging from single notes to 4 notes played simultaneously. To extract the features from the data source, Bextract was used, deriving 63 feature attributes for analysis. WEKA was used to develop 5 reduce feature sets using filter-based selection approach. 4 classifiers, IBK, SMO, J48, and Random tree for P1 were found. Their results were presented and compared for accuracy depending on which feature subset and which classifier were used. Using MEKA, IBK< J48, and RandomTree classifiers were used on datasets P2 - P4. Similarly, these accuracy results were presented and compared. In summary, this project determined IBK to be the best classifier for determining notes from an input audio file. In conclusion, this project successfully provided the framework for future work on transcribing a piano audio file into a human-readable score sheet.
 \section{Future Work}
 The results of this project support the ultimate goal of MIR to audio transcription to scoresheets by use of classifiers on sampled audio files. However, these results are limited to the ideal world where the number of notes and complexity of the file is already established. The most useful results will only be produced when the problem of unknown number of notes is solved. Future work should focus on any number of polyphonic music transcription using multilabel classification. Adding a blank class to the current 88 key classes should be one thing that we can try. We can suppose there are 10 notes being played simultaneously (by human’s 10 fingers). If actually there are only 4 notes, then 6 out of ten will be classified as blank class while the 4 notes can be classified as those in 88 key classes.
-
-
-
-
-
-
-
-
-
-
-
 
 
 % For bibtex users:
